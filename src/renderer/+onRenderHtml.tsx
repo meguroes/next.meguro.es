@@ -31,7 +31,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
   const robotsContent = pageContext.data?.isPrivate ? "none" : "index,follow";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
-    <html lang="en">
+    <html lang="ja">
       <head>
         <meta charset="UTF-8" />
         <link rel="icon" href="/favicon.svg" />
