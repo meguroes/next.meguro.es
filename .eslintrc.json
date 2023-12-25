@@ -1,0 +1,12 @@
+{
+  "extends": ["eslint:recommended", "preact", "prettier"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ]
+  }
+}

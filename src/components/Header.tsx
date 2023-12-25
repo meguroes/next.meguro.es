@@ -1,7 +1,16 @@
 export const Header = () => {
   return (
-    <header>
-      <h1>meguro.es</h1>
+    <header className="px-20 md:px-80 pt-40">
+      <h1>
+        <a href="/">
+          <img
+            src="/logo-horizontal.svg"
+            width={168}
+            height={44}
+            className="object-cover"
+          />
+        </a>
+      </h1>
     </header>
   );
 };

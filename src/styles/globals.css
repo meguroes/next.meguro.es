@@ -3,10 +3,24 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-navy: #0b1f39;
+    --color-white: #ffffff;
+    --color-white-alpha12: rgba(255, 255, 255, 0.12);
+    --color-white-alpha16: rgba(255, 255, 255, 0.16);
+    --color-darknavy: #040a13;
+    --color-gray: #444444;
+    --color-gradient-start: #fbb0d9;
+    --color-gradient-end: #a56bc6;
+  }
+
   html,
-  body {
+  body,
+  #root {
     width: 100%;
     height: 100%;
+    background-color: var(--color-navy);
+    color: var(--color-white);
   }
 }
 

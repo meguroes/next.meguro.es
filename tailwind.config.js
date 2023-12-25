@@ -1,8 +1,31 @@
+const MAX = 1200;
+const EMPTY_ARRAY = [...new Array(MAX)];
+const createConfig = () =>
+  EMPTY_ARRAY.reduce((config, _, index) => {
+    config[index] = `${index}px`;
+    return config;
+  }, {});
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./index.html", "./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      spacing: createConfig(),
+      fontSize: createConfig(),
+      width: createConfig(),
+      height: createConfig(),
+      colors: {
+        navy: "var(--color-navy)",
+        white: "var(--color-white)",
+        "white-alpha12": "var(--color-white-alpha12)",
+        "white-alpha16": "var(--color-white-alpha16)",
+        darknavy: "var(--color-darknavy)",
+        gray: "var(--color-gray)",
+        "gradient-start": "var(--color-gradient-start)",
+        "gradient-end": "var(--color-gradient-end)",
+      },
+    },
   },
   plugins: [],
 };
