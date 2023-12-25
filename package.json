@@ -1,0 +1,27 @@
+{
+  "name": "next.meguro.es",
+  "version": "0.0.0",
+  "description": "Next Meguro.es Website",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "clear": "rimraf dist && mkdirp dist"
+  },
+  "dependencies": {
+    "preact": "^10.19.3"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.7.0",
+    "@types/node": "^20.10.5",
+    "mkdirp": "^3.0.1",
+    "npm-run-all2": "^6.1.1",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.3",
+    "vite-plugin-svgr": "^4.2.0",
+    "vite-tsconfig-paths": "^4.2.2"
+  }
+}
