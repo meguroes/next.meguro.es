@@ -12,6 +12,9 @@
     --color-gray: #444444;
     --color-gradient-start: #fbb0d9;
     --color-gradient-end: #a56bc6;
+    --height-header: 80px;
+    --font-lobster: "Lobster", sans-serif;
+    --font-sans: "Noto Sans JP", sans-serif;
   }
 
   html,
@@ -21,6 +24,14 @@
     height: 100%;
     background-color: var(--color-navy);
     color: var(--color-white);
+    font-family: var(--font-sans);
+    letter-spacing: 0.05em;
+    line-height: 2;
+  }
+
+  a:hover,
+  a:focus {
+    opacity: 0.8;
   }
 }
 

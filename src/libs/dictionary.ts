@@ -8,10 +8,29 @@ type Paragraph = {
 /** Dictionaries */
 export const WEBSITE_URL = "https://meguro.es";
 
+export const TITLE_SUFFIX = " | Meguro.es";
 export const DEFAULT_TITLE = "Meguro.es";
 export const DEFAULT_DESCRIPTION =
   "Meguro.esは目黒周辺のフロントエンド開発者による勉強会です";
-export const TITLE_SUFFIX = " | Meguro.es";
+
+export const WE_ARE_BACK_ID = "We are back!";
+export const WE_ARE_BACK_TITLE = "Meguro.esが帰ってきました！";
+export const WE_ARE_BACK_DESCRIPTION =
+  "Meguro.es は、目黒周辺のフロントエンドエンジニアによる勉強会コミュニティです。このサイトでは、二ヶ月ごとに開催されるイベントの過去のミートアップの情報や、運営に関する情報をお知らせします。";
+
+export const POST_PARTIAL_LIST_ID = "Articles";
+export const POST_PARTIAL_LIST_TITLE = "イベントレポート";
+
+export const CONTACT_ID = "Contact";
+export const CONTACT_TITLE = "ご連絡はこちらから";
+
+export const GUIDELINE_INTRO_ID = "Guideline";
+export const GUIDELINE_INTRO_TITLE = "ガイドラインへのご協力をお願いします";
+export const GUIDELINE_INTRO_DESCRIPTION = [
+  "Meguro.esでは、快適なコミュニティの運営のためにガイドラインへのご協力をお願いしています。",
+  "登壇の有無に関わらず、全ての参加者とMeguro.es運営がコミュニティの一員です。",
+  "みなさまのご協力があって Meguro.es が運営されています。ありがとうございます。",
+];
 
 export const ABOUT = "私たちについて";
 export const ABOUT_TITLE = `${ABOUT}${TITLE_SUFFIX}`;
@@ -138,9 +157,13 @@ export const GUIDELINE_SUPPLEMENT: Paragraph[] = [
   },
 ];
 
+export const MEETUP_LIST_ID = "Event";
 export const MEETUP_LIST = "イベント一覧";
 
 export const POST_LIST = "記事一覧";
 
 export const ERROR_PAGE_NOT_FOUND = "ページが見つかりませんでした";
 export const ERROR_SOMETHING_WENT_WRONG = "エラーが発生しました";
+
+export const LABEL_COMING_SOON = "開催予定";
+export const LABEL_FINISHED = "公開終了";

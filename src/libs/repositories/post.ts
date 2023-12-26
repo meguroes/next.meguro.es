@@ -4,13 +4,18 @@ import { Post } from "~/libs/entities/Post";
 import { PostOutput } from "~/libs/presenters/PostOutput";
 
 export const post = {
-  findAll: async (
-    filter?: keyof Post["fields"],
-  ): Promise<Result<Post[], Error>> => {
+  findAll: async ({
+    filter,
+    limit,
+  }: {
+    filter?: keyof Post["fields"];
+    limit?: number;
+  }): Promise<Result<Post[], Error>> => {
     try {
       const post = await client.getEntries({
         content_type: "post",
         order: ["-fields.createdAt"],
+        limit,
       });
       if (filter) {
         return new Ok(
@@ -36,3 +41,5 @@ export const post = {
     }
   },
 } as const;
+
+export type PostFindAllOptions = Parameters<typeof post.findAll>[0];
