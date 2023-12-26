@@ -11,17 +11,17 @@ const navItems: {
     href: "/about",
   },
   {
-    name: GUIDELINE,
-    href: "/guideline",
+    name: MEETUP_LIST,
+    href: "https://meguroes.connpass.com/event/",
+    target: "_blank",
   },
   {
     name: POST_LIST,
     href: "/posts",
   },
   {
-    name: MEETUP_LIST,
-    href: "https://meguroes.connpass.com/event/",
-    target: "_blank",
+    name: GUIDELINE,
+    href: "/guideline",
   },
 ];
 

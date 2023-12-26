@@ -1,7 +1,12 @@
-export default function Page({ id }: { id: string }) {
+import { usePageContext } from "~/hooks/usePageContext";
+
+export default function Page() {
+  const context = usePageContext();
   return (
-    <>
-      <h1>Post {id}</h1>
-    </>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: context?.data?.post?.fields.body || "",
+      }}
+    />
   );
 }

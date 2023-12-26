@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <header className="px-20 md:px-80 pt-40">
+    <header className="px-20 md:px-80 pt-40 h-header max-w-content mx-auto">
       <h1>
         <a href="/">
           <img

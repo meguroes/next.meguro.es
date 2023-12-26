@@ -149,6 +149,38 @@ export async function data(pageContext: PageContext) {
 }
 ```
 
+### `/src/libs`
+
+このディレクトリには、Clean Architectureの一部を表現したディレクトリが含まれています。
+
+```shell
+.
+├── entities        # 表示のための型定義
+├── presenters      # 表示のためのクラス
+├── repositories    # データをAPIや外部から取得する関数
+└── usecases        # ユースケースごとに分かれた関数
+```
+
+データ取得のフローは以下になります。
+
+```mermaid
+graph LR
+  UI[UI]
+  API[API]
+  Repository[Repository]
+  Presenter[Presenter]
+  Usecase[Usecase]
+
+  API -->|Data| Repository
+  Repository -->|Data| Presenter
+  Presenter -->|Data| Usecase
+  Usecase -->|Data| UI
+```
+
+データ更新は現状発生していないので、特にフローはありません。
+
+実装は各ディレクトリ内のファイルを参考にしてください。
+
 ## Release Flow
 
 `main` ブランチに push すると Cloudflare Pages にデプロイされます。
