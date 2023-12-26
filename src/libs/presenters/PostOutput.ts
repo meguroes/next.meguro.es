@@ -1,8 +1,8 @@
-import { Post } from "~/libs/entities/Post";
-import { Entries } from "~/libs//contentful";
+import { Entries } from "~/libs/contentful";
 import { parseMarkdown } from "~/libs/parser";
+import { Post } from "~/libs/entities/Post";
 
-export class PostPresenter implements Post {
+export class PostOutput implements Post {
   readonly fields: Post["fields"];
   constructor({ fields }: Entries["items"][number]) {
     this.fields = {

@@ -1,6 +1,6 @@
-import { postRepository } from "~/libs/repositories/postRepository";
+import { post } from "~/libs/repositories/post";
 
 export const getPostList = async () => {
-  const postList = await postRepository.findAll();
-  return postList;
+  const res = await post.findAll();
+  return res;
 };

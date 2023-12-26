@@ -1,9 +1,9 @@
 import { client } from "~/libs/contentful";
 import { Err, Ok, Result } from "~/types/result";
 import { Post } from "~/libs/entities/Post";
-import { PostPresenter } from "../presenters/PostPresenter";
+import { PostOutput } from "~/libs/presenters/PostOutput";
 
-export const postRepository = {
+export const post = {
   findAll: async (
     filter?: keyof Post["fields"],
   ): Promise<Result<Post[], Error>> => {
@@ -15,11 +15,11 @@ export const postRepository = {
       if (filter) {
         return new Ok(
           post.items
-            .map((item) => new PostPresenter(item))
+            .map((item) => new PostOutput(item))
             .filter((item) => item.fields[filter]),
         );
       }
-      return new Ok(post.items.map((item) => new PostPresenter(item)));
+      return new Ok(post.items.map((item) => new PostOutput(item)));
     } catch (e) {
       return new Err(e as Error);
     }
@@ -30,7 +30,7 @@ export const postRepository = {
         content_type: "post",
         "fields.slug": id,
       });
-      return new Ok(new PostPresenter(post.items[0]));
+      return new Ok(new PostOutput(post.items[0]));
     } catch (e) {
       return new Err(e as Error);
     }

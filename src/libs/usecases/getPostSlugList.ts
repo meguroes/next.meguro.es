@@ -1,10 +1,10 @@
-import { postRepository } from "~/libs/repositories/postRepository";
+import { post } from "~/libs/repositories/post";
 import { Err, Ok } from "~/types/result";
 
 export const getPostSlugList = async () => {
-  const data = await postRepository.findAll("slug");
-  if (data.isOk()) {
-    return new Ok(data.unwrap().map((item) => item.fields.slug));
+  const res = await post.findAll("slug");
+  if (res.isOk()) {
+    return new Ok(res.unwrap().map((item) => item.fields.slug));
   }
-  return new Err(data.unwrap());
+  return new Err(res.unwrap());
 };
