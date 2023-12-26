@@ -1,4 +1,5 @@
 import { h } from "preact";
+import { Post } from "~/libs/entities/Post";
 
 // https://vike.dev/pageContext#typescript
 declare global {
@@ -11,6 +12,8 @@ declare global {
         description?: string;
         ogImageUrl?: string;
         isPrivate?: boolean; // ページを限定公開にする際に使用してください。
+        postList?: Post[];
+        post?: Post;
       };
       abortReason?: string;
       abortStatusCode?: number;
