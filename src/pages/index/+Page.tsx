@@ -259,7 +259,7 @@ export function Page() {
                           post.fields.heroImageUrl || "/image_hero_fallback.png"
                         }
                       />
-                      <h3 className="h-[calc(2em_*_2)] text-20 font-bold md:text-24">
+                      <h3 className="min-h-[calc(2em_*_2)] text-20 font-bold md:text-24">
                         {post.fields.title}
                       </h3>
                       <div className="space-y-10">
