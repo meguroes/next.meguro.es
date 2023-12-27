@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
-    <header className="mx-auto h-header max-w-content px-20 pt-40 md:px-80">
-      <h1>
+    <header className="relative z-header mx-auto h-header max-w-content px-20 pt-40 md:px-80">
+      <h1 className="w-fit">
         <a href="/">
           <img
             src="/logo-horizontal.svg"

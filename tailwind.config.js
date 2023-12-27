@@ -37,6 +37,9 @@ module.exports = {
         lobster: "var(--font-lobster)",
         sans: "var(--font-sans)",
       },
+      zIndex: {
+        header: "var(--z-index-header)",
+      },
     },
   },
   plugins: [],

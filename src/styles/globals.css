@@ -24,6 +24,7 @@
     --height-header: 80px;
     --font-lobster: "Lobster", cursive;
     --font-sans: "Noto Sans JP", sans-serif;
+    --z-index-header: 9999;
   }
 
   html,
