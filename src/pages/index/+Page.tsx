@@ -136,7 +136,7 @@ export function Page() {
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-1 gap-y-32 md:grid-cols-9 md:gap-y-0 md:py-120">
+      <section className="grid grid-cols-1 gap-y-32 pb-40 pt-72 md:grid-cols-9 md:gap-y-0 md:py-120">
         <h2
           id={WE_ARE_BACK_ID.replace(/\s/g, "-").toLowerCase()}
           className="md:col-span-4 md:mr-72"
@@ -295,7 +295,7 @@ export function Page() {
           )}
         </div>
       </section>
-      <section className="grid grid-cols-1 gap-y-80 py-40 md:grid-cols-9 md:gap-y-0 md:py-120">
+      <section className="grid grid-cols-1 gap-y-80 py-40 md:grid-cols-9 md:gap-y-0 md:py-80">
         <div className="order-last space-y-40 md:order-none md:col-span-4 md:mr-72">
           <h2 id={CONTACT_ID.toLowerCase()}>
             <a
