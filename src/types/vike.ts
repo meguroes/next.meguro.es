@@ -16,6 +16,7 @@ declare global {
         postList?: Post[];
         post?: Post;
         meetupList?: Meetup[];
+        recentMeetup?: Meetup;
       };
       abortReason?: string;
       abortStatusCode?: number;

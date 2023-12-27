@@ -1,12 +1,17 @@
 import contentful from "contentful";
+/* eslint no-duplicate-imports: "off" */
+import * as all from "contentful";
+
+/** @see https://github.com/contentful/contentful.js/issues/917#issuecomment-1851088525 */
+const createClient = contentful ? contentful.createClient : all.createClient;
 
 class Contentful {
   #client: contentful.ContentfulClientApi<undefined>;
 
   constructor() {
-    this.#client = contentful.createClient({
-      space: import.meta.env.CONTENTFUL_SPACE_ID,
-      accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN,
+    this.#client = createClient({
+      space: import.meta.env.PUBLIC_ENV__CONTENTFUL_SPACE_ID,
+      accessToken: import.meta.env.PUBLIC_ENV__CONTENTFUL_ACCESS_TOKEN,
     });
   }
 

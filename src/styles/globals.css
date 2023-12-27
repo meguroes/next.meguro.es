@@ -50,4 +50,12 @@
     position: sticky;
     top: 100vh;
   }
+
+  .bg-gradient-primary {
+    @apply bg-gradient-to-b from-gradient-start to-gradient-end;
+  }
+
+  .bg-gradient-primary-to-br {
+    @apply bg-gradient-to-br from-gradient-start to-gradient-end;
+  }
 }

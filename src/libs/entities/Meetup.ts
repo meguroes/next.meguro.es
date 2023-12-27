@@ -5,5 +5,6 @@ export interface Meetup {
     date: string;
     locationName: string;
     locationUrl: string;
+    connpassUrl: string;
   };
 }

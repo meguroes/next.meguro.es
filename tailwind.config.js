@@ -40,7 +40,8 @@ module.exports = {
       zIndex: {
         header: "var(--z-index-header)",
       },
+      borderRadius: createConfig(),
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-children")],
 };
