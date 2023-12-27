@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "sans-serif";
+    src: local("sans-serif");
+    ascent-override: 30%;
+    descent-override: 30%;
+    line-gap-override: 100%;
+    advance-override: 0;
+  }
+
   :root {
     --color-navy: #0b1f39;
     --color-white: #ffffff;
@@ -13,7 +22,7 @@
     --color-gradient-start: #fbb0d9;
     --color-gradient-end: #a56bc6;
     --height-header: 80px;
-    --font-lobster: "Lobster", sans-serif;
+    --font-lobster: "Lobster", cursive;
     --font-sans: "Noto Sans JP", sans-serif;
   }
 
