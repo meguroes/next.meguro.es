@@ -7,7 +7,7 @@ export const RootLayout = ({ children }: { children: ComponentChildren }) => {
   return (
     <>
       <Header />
-      <main className="max-w-content mx-auto px-20 md:px-80 pb-40 md:pb-80">
+      <main className="mx-auto max-w-content px-20 pb-40 md:px-80 md:pb-80">
         {children}
       </main>
       <Footer />

@@ -22,47 +22,48 @@ export function Page() {
   const context = usePageContext();
   return (
     <>
-      <section className="max-h-800 h-[100vh] -mt-[var(--height-header)] relative overflow-hidden">
+      {/* eslint tailwindcss/enforces-negative-arbitrary-values: "off" */}
+      <section className="relative h-[100vh] max-h-800 overflow-hidden md:-mt-[var(--height-header)]">
         <img
           alt="Meguro.es Icon"
           src="/icon-squirrel.svg"
           width={730}
           height={800}
-          className="absolute bottom-0 right-0 md:bottom-auto md:top-0 pointer-events-none w-375 md:w-730 h-410 md:h-800"
+          className="pointer-events-none absolute bottom-0 right-0 h-410 max-w-375 lg:bottom-auto lg:top-0 lg:h-800 lg:max-w-730"
         />
-        <div className="relative w-full h-full flex place-items-center ">
+        <div className="relative h-full w-full pt-[15%] lg:flex lg:place-items-center lg:pt-0">
           <div className="space-y-18">
-            <h2 className="text-64 font-lobster">{DEFAULT_TITLE}</h2>
+            <h2 className="font-lobster text-64">{DEFAULT_TITLE}</h2>
             <div className="text-18 font-bold">{DEFAULT_DESCRIPTION}</div>
           </div>
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-9 py-40 md:py-120 gap-y-32 md:gap-y-0">
+      <section className="grid grid-cols-1 gap-y-32 py-40 md:grid-cols-9 md:gap-y-0 md:py-120">
         <h2
           id={WE_ARE_BACK_ID.replace(/\s/g, "-").toLowerCase()}
           className="md:col-span-4 md:mr-72"
         >
           <a
             href={`/#${WE_ARE_BACK_ID.replace(/\s/g, "-").toLowerCase()}`}
-            className="font-bold space-y-8"
+            className="space-y-8 font-bold"
           >
-            <span className="flex gap-x-8 place-items-center text-14 before:content-[''] before:block before:h-1 before:w-32 before:bg-white">
+            <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
               {WE_ARE_BACK_ID}
             </span>
             <span className="text-28">{WE_ARE_BACK_TITLE}</span>
           </a>
         </h2>
-        <div className="md:col-span-5 md:col-start-5 md:text-18 text-14 font-normal md:font-bold">
+        <div className="text-14 font-normal md:col-span-5 md:col-start-5 md:text-18 md:font-bold">
           {WE_ARE_BACK_DESCRIPTION}
         </div>
       </section>
-      <section className="md:py-80 py-40">
+      <section className="py-40 md:py-80">
         <h2 id={MEETUP_LIST_ID.toLowerCase()}>
           <a
             href={`/#${MEETUP_LIST_ID.toLowerCase()}`}
-            className="font-bold space-y-8"
+            className="space-y-8 font-bold"
           >
-            <span className="flex gap-x-8 place-items-center text-14 before:content-[''] before:block before:h-1 before:w-32 before:bg-white">
+            <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
               {MEETUP_LIST_ID}
             </span>
             <span className="text-28">{MEETUP_LIST}</span>
@@ -96,9 +97,9 @@ export function Page() {
         <h2 id={POST_PARTIAL_LIST_ID.toLowerCase()}>
           <a
             href={`/#${POST_PARTIAL_LIST_ID.toLowerCase()}`}
-            className="font-bold space-y-8"
+            className="space-y-8 font-bold"
           >
-            <span className="flex gap-x-8 place-items-center text-14 before:content-[''] before:block before:h-1 before:w-32 before:bg-white">
+            <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
               {POST_PARTIAL_LIST_ID}
             </span>
             <span className="text-28">{POST_PARTIAL_LIST_TITLE}</span>
@@ -122,27 +123,27 @@ export function Page() {
           </ul>
         </div>
       </section>
-      <section className="grid grid-cols-1 md:grid-cols-9 py-40 md:py-120 gap-y-32 md:gap-y-0">
+      <section className="grid grid-cols-1 gap-y-32 py-40 md:grid-cols-9 md:gap-y-0 md:py-120">
         <div className="md:col-span-4 md:mr-72">
           <h2 id={CONTACT_ID.toLowerCase()}>
             <a
               href={`/#${CONTACT_ID.toLowerCase()}`}
-              className="font-bold space-y-8"
+              className="space-y-8 font-bold"
             >
-              <span className="flex gap-x-8 place-items-center text-14 before:content-[''] before:block before:h-1 before:w-32 before:bg-white">
+              <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
                 {CONTACT_ID}
               </span>
               <span className="text-28">{CONTACT_TITLE}</span>
             </a>
           </h2>
         </div>
-        <div className="md:col-span-5 md:col-start-5 md:text-18 text-14 font-normal md:font-bold">
+        <div className="text-14 font-normal md:col-span-5 md:col-start-5 md:text-18 md:font-bold">
           <h2 id={GUIDELINE_INTRO_ID.toLowerCase()}>
             <a
               href={`/#${GUIDELINE_INTRO_ID.toLowerCase()}`}
-              className="font-bold space-y-8"
+              className="space-y-8 font-bold"
             >
-              <span className="flex gap-x-8 place-items-center text-14 before:content-[''] before:block before:h-1 before:w-32 before:bg-white">
+              <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
                 {GUIDELINE_INTRO_ID}
               </span>
               <span className="text-28">{GUIDELINE_INTRO_TITLE}</span>

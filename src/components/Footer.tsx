@@ -27,9 +27,9 @@ const navItems: {
 
 export const Footer = () => {
   return (
-    <footer className="footer text-center p-2 bg-darknavy p-24 md:px-80 space-y-16">
+    <footer className="footer space-y-16 bg-darknavy p-24 text-center md:px-80">
       <nav>
-        <ul className="flex text-white place-content-center text-10 md:text-12 gap-x-20 md:gap-x-48">
+        <ul className="flex place-content-center gap-x-20 text-10 text-white md:gap-x-48 md:text-12">
           {navItems.map((item) => (
             <li key={item.name}>
               <a href={item.href} target={item.target}>
@@ -39,7 +39,7 @@ export const Footer = () => {
           ))}
         </ul>
       </nav>
-      <small className="text-gray text-10">&copy; Meguro.es</small>
+      <small className="text-10 text-gray">&copy; Meguro.es</small>
     </footer>
   );
 };
