@@ -6,5 +6,6 @@ export interface Post {
     body: string;
     createdAt: string;
     updatedAt: string;
+    heroImageUrl: string | null;
   };
 }

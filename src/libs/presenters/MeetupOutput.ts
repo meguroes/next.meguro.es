@@ -14,6 +14,7 @@ export class MeetupOutput implements Meetup {
       date: String(fields.date || ""),
       locationName: String(fields.locationName || ""),
       locationUrl: `https://www.google.com/maps/search/?api=1&query=${location.lat}%2C${location.lon}`,
+      connpassUrl: String(fields.eventUrl || ""),
     };
   }
 }

@@ -1,6 +1,6 @@
-import { meetup } from "~/libs/repositories/meetup";
+import { MeetupFindAllOptions, meetup } from "~/libs/repositories/meetup";
 
-export const getMeetupList = async () => {
-  const res = await meetup.findAll();
+export const getMeetupList = async (options?: MeetupFindAllOptions) => {
+  const res = await meetup.findAll(options || {});
   return res;
 };

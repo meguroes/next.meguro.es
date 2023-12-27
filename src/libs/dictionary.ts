@@ -7,19 +7,23 @@ type Paragraph = {
 
 /** Dictionaries */
 export const WEBSITE_URL = "https://meguro.es";
+export const X_ACCOUNT_ID = "@meguroes";
+export const X_ACCOUNT_URL = `https://x.com/${X_ACCOUNT_ID}`;
 
 export const TITLE_SUFFIX = " | Meguro.es";
 export const DEFAULT_TITLE = "Meguro.es";
 export const DEFAULT_DESCRIPTION =
   "Meguro.esは目黒周辺のフロントエンド開発者による勉強会です";
 
+export const RECENT_MEETUP_ID = "Recent Event";
+
 export const WE_ARE_BACK_ID = "We are back!";
 export const WE_ARE_BACK_TITLE = "Meguro.esが帰ってきました！";
 export const WE_ARE_BACK_DESCRIPTION =
   "Meguro.es は、目黒周辺のフロントエンドエンジニアによる勉強会コミュニティです。このサイトでは、二ヶ月ごとに開催されるイベントの過去のミートアップの情報や、運営に関する情報をお知らせします。";
 
-export const POST_PARTIAL_LIST_ID = "Information";
-export const POST_PARTIAL_LIST_TITLE = "お知らせ";
+export const INFORMATION_LIST_ID = "Information";
+export const INFORMATION_LIST_TITLE = "お知らせ";
 
 export const CONTACT_ID = "Contact";
 export const CONTACT_TITLE = "ご連絡はこちらから";
@@ -164,6 +168,10 @@ export const POST_LIST = "記事一覧";
 
 export const ERROR_PAGE_NOT_FOUND = "ページが見つかりませんでした";
 export const ERROR_SOMETHING_WENT_WRONG = "エラーが発生しました";
+export const ERROR_FAILED_TO_LOAD = "読み込みに失敗しました";
 
 export const LABEL_COMING_SOON = "開催予定";
 export const LABEL_FINISHED = "公開終了";
+export const LABEL_READ_MORE = "さらに読み込む";
+export const LABEL_OPEN_GUIDELINE = "ガイドラインを見る";
+export const LABEL_OPEN_MEETUP = "イベント詳細へ";
