@@ -246,7 +246,7 @@ export function Page() {
               ? postList.map((post) => (
                   <li
                     key={post.fields.slug}
-                    className="mx-auto max-w-405 md:min-h-388"
+                    className="mx-auto w-full max-w-405 md:min-h-388"
                   >
                     <a
                       href={`/posts/${post.fields.slug}`}
