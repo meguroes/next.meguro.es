@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "preact/compat";
-import { ABOUT, GUIDELINE, MEETUP_LIST, POST_LIST } from "~/libs/dictionary";
+import { ABOUT, GUIDELINE, MEETUP_LIST } from "~/libs/dictionary";
 
 const navItems: {
   name: string;
@@ -14,10 +14,6 @@ const navItems: {
     name: MEETUP_LIST,
     href: "https://meguroes.connpass.com/event/",
     target: "_blank",
-  },
-  {
-    name: POST_LIST,
-    href: "/posts",
   },
   {
     name: GUIDELINE,

@@ -26,7 +26,7 @@ export function Page() {
       <section className="relative h-[100vh] max-h-800 overflow-hidden md:-mt-[var(--height-header)]">
         <img
           alt="Meguro.es Icon"
-          src="/icon-squirrel.svg"
+          src="/icon_squirrel.svg"
           width={730}
           height={800}
           className="pointer-events-none absolute bottom-0 right-0 h-410 max-w-375 lg:bottom-auto lg:top-0 lg:h-800 lg:max-w-730"
@@ -71,8 +71,8 @@ export function Page() {
         </h2>
         <div>
           <ul>
-            {context?.data?.meetupList?.map((meetup) => (
-              <li key={meetup.fields.id}>
+            {context?.data?.meetupList?.map((meetup, index) => (
+              <li key={meetup.fields.id || index}>
                 <span>
                   {day(meetup.fields.date).isSameOrAfter(day(), "milliseconds")
                     ? LABEL_COMING_SOON

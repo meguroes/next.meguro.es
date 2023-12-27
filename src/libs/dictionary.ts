@@ -18,8 +18,8 @@ export const WE_ARE_BACK_TITLE = "Meguro.esが帰ってきました！";
 export const WE_ARE_BACK_DESCRIPTION =
   "Meguro.es は、目黒周辺のフロントエンドエンジニアによる勉強会コミュニティです。このサイトでは、二ヶ月ごとに開催されるイベントの過去のミートアップの情報や、運営に関する情報をお知らせします。";
 
-export const POST_PARTIAL_LIST_ID = "Articles";
-export const POST_PARTIAL_LIST_TITLE = "イベントレポート";
+export const POST_PARTIAL_LIST_ID = "Information";
+export const POST_PARTIAL_LIST_TITLE = "お知らせ";
 
 export const CONTACT_ID = "Contact";
 export const CONTACT_TITLE = "ご連絡はこちらから";

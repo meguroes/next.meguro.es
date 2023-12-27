@@ -4,7 +4,7 @@ export const Header = () => {
       <h1 className="w-fit">
         <a href="/">
           <img
-            src="/logo-horizontal.svg"
+            src="/logo_horizontal.svg"
             width={168}
             height={44}
             className="object-cover"
