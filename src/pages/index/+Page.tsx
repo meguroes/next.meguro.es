@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useEffect, useState } from "preact/hooks";
+import { SectionHeaderCaption } from "~/components/SectionHeaderCaption";
 import { Skeleton } from "~/components/Skeleton";
 import { useGetPostList } from "~/hooks/useGetPostList";
 import { usePageContext } from "~/hooks/usePageContext";
@@ -74,9 +75,7 @@ export function Page() {
             </div>
             {context?.data?.recentMeetup && (
               <div className="bg-gradient-primary relative hidden w-320 space-y-12 rounded-12 px-16 py-20 font-bold before:absolute before:inset-0 before:m-2 before:rounded-12 before:bg-navy child:relative md:block">
-                <div className="flex place-items-center gap-x-8 text-10 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
-                  {RECENT_MEETUP_ID}
-                </div>
+                <SectionHeaderCaption text={RECENT_MEETUP_ID} as="div" />
                 <h3 className="text-12">
                   {context.data.recentMeetup.fields.title}
                 </h3>
@@ -145,9 +144,7 @@ export function Page() {
             href={`/#${WE_ARE_BACK_ID.replace(/\s/g, "-").toLowerCase()}`}
             className="space-y-8 font-bold"
           >
-            <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
-              {WE_ARE_BACK_ID}
-            </span>
+            <SectionHeaderCaption text={WE_ARE_BACK_ID} />
             <span className="text-28">{WE_ARE_BACK_TITLE}</span>
           </a>
         </h2>
@@ -161,9 +158,7 @@ export function Page() {
             href={`/#${MEETUP_LIST_ID.toLowerCase()}`}
             className="space-y-8 font-bold"
           >
-            <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
-              {MEETUP_LIST_ID}
-            </span>
+            <SectionHeaderCaption text={MEETUP_LIST_ID} />
             <span className="text-28">{MEETUP_LIST}</span>
           </a>
         </h2>
@@ -234,9 +229,7 @@ export function Page() {
             href={`/#${INFORMATION_LIST_ID.toLowerCase()}`}
             className="space-y-8 font-bold"
           >
-            <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
-              {INFORMATION_LIST_ID}
-            </span>
+            <SectionHeaderCaption text={INFORMATION_LIST_ID} />
             <span className="text-28">{INFORMATION_LIST_TITLE}</span>
           </a>
         </h2>
@@ -295,16 +288,14 @@ export function Page() {
           )}
         </div>
       </section>
-      <section className="grid grid-cols-1 gap-y-80 py-40 md:grid-cols-9 md:gap-y-0 md:py-80">
+      <section className="grid grid-cols-1 gap-y-80 md:grid-cols-9 md:gap-y-0">
         <div className="order-last space-y-40 md:order-none md:col-span-4 md:mr-72">
           <h2 id={CONTACT_ID.toLowerCase()}>
             <a
               href={`/#${CONTACT_ID.toLowerCase()}`}
               className="space-y-8 font-bold"
             >
-              <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
-                {CONTACT_ID}
-              </span>
+              <SectionHeaderCaption text={CONTACT_ID} />
               <span className="text-28">{CONTACT_TITLE}</span>
             </a>
           </h2>
@@ -321,9 +312,7 @@ export function Page() {
               href={`/#${GUIDELINE_INTRO_ID.toLowerCase()}`}
               className="space-y-8 font-bold"
             >
-              <span className="flex place-items-center gap-x-8 text-14 before:block before:h-1 before:w-32 before:bg-white before:content-['']">
-                {GUIDELINE_INTRO_ID}
-              </span>
+              <SectionHeaderCaption text={GUIDELINE_INTRO_ID} />
               <span className="text-28">{GUIDELINE_INTRO_TITLE}</span>
             </a>
           </h2>
