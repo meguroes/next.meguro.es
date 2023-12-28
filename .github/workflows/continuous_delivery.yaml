@@ -1,0 +1,40 @@
+name: Continuous Delivery
+
+on: [workflow_dispatch]
+
+jobs:
+  build-and-deploy:
+    name: Build and deploy
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      deployments: write
+
+    strategy:
+      matrix:
+        node-version: ["18"]
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: volta-cli/action@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install
+        run: npm ci .
+
+      - name: Build
+        run: npm run build
+        env:
+          PUBLIC_ENV__CONTENTFUL_SPACE_ID: ${{ secrets.PUBLIC_ENV__CONTENTFUL_SPACE_ID }}
+          PUBLIC_ENV__CONTENTFUL_ACCESS_TOKEN: ${{ secrets.PUBLIC_ENV__CONTENTFUL_ACCESS_TOKEN }}
+
+      - name: Deploy
+        uses: cloudflare/pages-action@1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+          directory: ./dist/client
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
