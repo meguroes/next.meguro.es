@@ -14,8 +14,8 @@ export default function Page() {
       <section>
         <h2>{GUIDELINE_DESCRIPTION}</h2>
         <div>
-          {GUIDELINE_SUB_DESCRIPTION.map((desc) => (
-            <div key={desc} dangerouslySetInnerHTML={{ __html: desc }} />
+          {GUIDELINE_SUB_DESCRIPTION.map((desc, index) => (
+            <div key={index} dangerouslySetInnerHTML={{ __html: desc }} />
           ))}
         </div>
       </section>
@@ -26,8 +26,8 @@ export default function Page() {
               <div>{slogan.id}</div>
               <h2>{slogan.title}</h2>
             </div>
-            {slogan.description.map((desc) => (
-              <div key={desc} dangerouslySetInnerHTML={{ __html: desc }} />
+            {slogan.description.map((desc, index) => (
+              <div key={index} dangerouslySetInnerHTML={{ __html: desc }} />
             ))}
           </div>
         ))}
@@ -41,8 +41,8 @@ export default function Page() {
                 <div>{againstViolation.id}</div>
                 <h3>{againstViolation.title}</h3>
               </div>
-              {againstViolation.description.map((desc) => (
-                <div key={desc} dangerouslySetInnerHTML={{ __html: desc }} />
+              {againstViolation.description.map((desc, index) => (
+                <div key={index} dangerouslySetInnerHTML={{ __html: desc }} />
               ))}
             </div>
           ))}
@@ -57,8 +57,8 @@ export default function Page() {
                 <div>{supplement.id}</div>
                 <h3>{supplement.title}</h3>
               </div>
-              {supplement.description.map((desc) => (
-                <div key={desc} dangerouslySetInnerHTML={{ __html: desc }} />
+              {supplement.description.map((desc, index) => (
+                <div key={index} dangerouslySetInnerHTML={{ __html: desc }} />
               ))}
             </div>
           ))}
