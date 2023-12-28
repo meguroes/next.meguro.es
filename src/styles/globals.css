@@ -45,12 +45,31 @@
   }
 }
 
-@layer utilities {
+@layer components {
   .footer {
     position: sticky;
     top: 100vh;
   }
 
+  .post {
+    @apply space-y-32 text-14;
+    h1 {
+      @apply mb-120 text-32 font-bold;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-20 font-bold;
+    }
+    a {
+      @apply underline;
+    }
+  }
+}
+
+@layer utilities {
   .bg-gradient-primary {
     @apply bg-gradient-to-b from-gradient-start to-gradient-end;
   }

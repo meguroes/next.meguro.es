@@ -41,10 +41,58 @@ export const ABOUT_TITLE = `${ABOUT}${TITLE_SUFFIX}`;
 export const ABOUT_DESCRIPTION = "Meguro.esとは";
 export const ABOUT_SUB_DESCRIPTION = [];
 export const ABOUT_SUMMARY: Paragraph[] = [];
-export const ABOUT_WANTED_SPONSOR_TITLE = "";
-export const ABOUT_WANTED_SPONSOR_DESCRIPTION = [];
-export const ABOUT_SPONSOR_REWARD_TITLE = "";
-export const ABOUT_SPONSOR_REWARD: Paragraph[] = [];
+
+export const WANTED_SPONSOR_TITLE = "スポンサーを募集しています。";
+export const WANTED_SPONSOR_DESCRIPTION = [
+  "Meguro.esは多くの企業、個人の方のスポンサーに支えられて開催しています。",
+  "Meguro.esは引き続きイベントのスポンサー（個人、チーム、企業）を募集しております。",
+  "<br>",
+  "スポンサー内容にはこれらのものがございます。",
+  "・会場の提供",
+  "・イベントでの飲食の提供",
+  "・参加者の交流のための名札・ネックストラップの購入費用",
+  "・運営のために必要な消耗品の購入資金",
+  "<br>",
+  "スポンサーを希望される方は、Twitterまたは、イベントスタッフまでお声がけください。",
+];
+export const WANTED_SPONSOR_REWARD_TITLE =
+  "スポンサーの皆さまには特典をご提供しています。";
+// TODO: 文言修正
+export const WANTED_SPONSOR_REWARD: Paragraph[] = [
+  {
+    id: "01",
+    title: "パンフレットやノベルティの配布",
+    description: ["パンフレットやノベルティの配布を"],
+  },
+  {
+    id: "02",
+    title: "イベント会場での採用活動",
+    description: [
+      "スポンサー特典として以下の特典があります。",
+      "・パンフレット、ノベルティの配布",
+      "・イベント会場での採用活動",
+      "　・技術者主体のイベントへのご理解をお願いいたします",
+      "　・執拗に連絡先を交換しようとするなどの迷惑行為は禁止いたします",
+      "・会社・団体・サービス紹介の時間の確保",
+      "・当サイトへのバナー掲載",
+      "また、その他の特典もご相談ください。",
+    ],
+  },
+  {
+    id: "03",
+    title: "会社・団体・サービス紹介の時間の確保",
+    description: [
+      "スポンサー特典として以下の特典があります。",
+      "・パンフレット、ノベルティの配布",
+      "・イベント会場での採用活動",
+      "　・技術者主体のイベントへのご理解をお願いいたします",
+      "　・執拗に連絡先を交換しようとするなどの迷惑行為は禁止いたします",
+      "・会社・団体・サービス紹介の時間の確保",
+      "・当サイトへのバナー掲載",
+      "また、その他の特典もご相談ください。",
+    ],
+  },
+];
 
 export const GUIDELINE = "ガイドライン";
 export const GUIDELINE_TITLE = `${GUIDELINE}${TITLE_SUFFIX}`;

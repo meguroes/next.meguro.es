@@ -10,8 +10,7 @@ export async function data(pageContext: PageContext) {
     return {
       title: data.fields.title,
       description: data.fields.description,
-      // TODO: hero画像のデータ形式確認
-      // ogImageUrl: "",
+      ogImageUrl: data.fields.heroImageUrl || "/image_hero_fallback.png",
       post: data,
     };
   }
