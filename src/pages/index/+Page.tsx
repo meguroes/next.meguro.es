@@ -103,7 +103,7 @@ export function Page() {
                           href={context.data.recentMeetup.fields.locationUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex place-items-center gap-x-6 text-10"
+                          className="flex w-fit place-items-center gap-x-6 text-10"
                         >
                           <img
                             alt="location ghost icon"
