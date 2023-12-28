@@ -239,7 +239,7 @@ export function Page() {
         </h2>
         <div className="space-y-56">
           <ul className="grid grid-cols-1 gap-y-48 md:grid-cols-3 md:gap-32">
-            {!isLoading && !error
+            {!isLoading
               ? postList.map((post) => (
                   <li
                     key={post.fields.slug}
@@ -275,7 +275,7 @@ export function Page() {
                     </a>
                   </li>
                 ))
-              : [...new Array(POST_LIMIT)].map((_, index) => (
+              : [...new Array(POST_LIMIT * (size + 1))].map((_, index) => (
                   <li key={index}>
                     <Skeleton className="min-h-388" />
                   </li>
