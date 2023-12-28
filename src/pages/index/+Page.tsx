@@ -73,65 +73,69 @@ export function Page() {
               <h2 className="font-lobster text-64">{DEFAULT_TITLE}</h2>
               <div className="text-18 font-bold">{DEFAULT_DESCRIPTION}</div>
             </div>
-            {context?.data?.recentMeetup && (
-              <div className="bg-gradient-primary relative hidden w-320 space-y-12 rounded-12 px-16 py-20 font-bold before:absolute before:inset-0 before:m-2 before:rounded-12 before:bg-navy child:relative md:block">
-                <SectionHeaderCaption text={RECENT_MEETUP_ID} as="div" />
-                <h3 className="text-12">
-                  {context.data.recentMeetup.fields.title}
-                </h3>
-                <div className="space-y-6">
-                  <div className="flex place-items-center gap-x-6 text-10">
-                    <img
-                      alt="event icon"
-                      src="/icon_event.svg"
-                      width={16}
-                      height={16}
-                    />
-                    <span>
-                      {day(context.data.recentMeetup.fields.date).format(
-                        "YYYY.MM.DD (dd)",
-                      )}
-                    </span>
-                  </div>
-                  <div className="flex place-items-center">
-                    <div className="grow">
-                      <a
-                        href={context.data.recentMeetup.fields.locationUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex place-items-center gap-x-6 text-10"
-                      >
-                        <img
-                          alt="location ghost icon"
-                          src="icon_location_ghost.svg"
-                          width={16}
-                          height={16}
-                        />
-                        <span>
-                          {context.data.recentMeetup.fields.locationName}
-                        </span>
-                      </a>
-                    </div>
-                    <div className="flex place-items-center gap-x-2">
-                      <a
-                        className="text-8 underline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={context.data.recentMeetup.fields.connpassUrl}
-                      >
-                        {LABEL_OPEN_MEETUP}
-                      </a>
+            {context?.data?.recentMeetup &&
+              day(context.data.recentMeetup.fields.date).isSameOrAfter(
+                day(),
+                "milliseconds",
+              ) && (
+                <div className="bg-gradient-primary relative hidden w-320 space-y-12 rounded-12 px-16 py-20 font-bold before:absolute before:inset-0 before:m-2 before:rounded-12 before:bg-navy child:relative md:block">
+                  <SectionHeaderCaption text={RECENT_MEETUP_ID} as="div" />
+                  <h3 className="text-12">
+                    {context.data.recentMeetup.fields.title}
+                  </h3>
+                  <div className="space-y-6">
+                    <div className="flex place-items-center gap-x-6 text-10">
                       <img
-                        alt="open icon"
-                        src="/icon_open.svg"
-                        width={10}
-                        height={10}
+                        alt="event icon"
+                        src="/icon_event.svg"
+                        width={16}
+                        height={16}
                       />
+                      <span>
+                        {day(context.data.recentMeetup.fields.date).format(
+                          "YYYY.MM.DD (dd)",
+                        )}
+                      </span>
+                    </div>
+                    <div className="flex place-items-center">
+                      <div className="grow">
+                        <a
+                          href={context.data.recentMeetup.fields.locationUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex place-items-center gap-x-6 text-10"
+                        >
+                          <img
+                            alt="location ghost icon"
+                            src="icon_location_ghost.svg"
+                            width={16}
+                            height={16}
+                          />
+                          <span>
+                            {context.data.recentMeetup.fields.locationName}
+                          </span>
+                        </a>
+                      </div>
+                      <div className="flex place-items-center gap-x-2">
+                        <a
+                          className="text-8 underline"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          href={context.data.recentMeetup.fields.connpassUrl}
+                        >
+                          {LABEL_OPEN_MEETUP}
+                        </a>
+                        <img
+                          alt="open icon"
+                          src="/icon_open.svg"
+                          width={10}
+                          height={10}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
           </div>
         </div>
       </section>
