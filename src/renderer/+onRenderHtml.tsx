@@ -27,7 +27,8 @@ const onRenderHtml: OnRenderHtmlAsync = async (
 
   const title = pageContext.data?.title || DEFAULT_TITLE;
   const desc = pageContext.data?.description || DEFAULT_DESCRIPTION;
-  const ogImageUrl = pageContext.data?.ogImageUrl || "/image_og.png";
+  const ogImageUrl =
+    pageContext.data?.ogImageUrl || `${WEBSITE_URL}/image_og.png`;
   const robotsContent = pageContext.data?.isPrivate ? "none" : "index,follow";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
@@ -45,6 +46,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
         <meta property="og:title" content="${title}" />
         <meta property="og:description" content="${desc}" />
         <meta property="og:image" content="${ogImageUrl}" /> 
+        <meta property="og:image:secure_url" content="${ogImageUrl}" />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
