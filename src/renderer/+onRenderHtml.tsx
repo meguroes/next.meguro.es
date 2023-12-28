@@ -27,7 +27,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
 
   const title = pageContext.data?.title || DEFAULT_TITLE;
   const desc = pageContext.data?.description || DEFAULT_DESCRIPTION;
-  const ogImageUrl = pageContext.data?.ogImageUrl || "/og-image.png";
+  const ogImageUrl = pageContext.data?.ogImageUrl || "/image_og.png";
   const robotsContent = pageContext.data?.isPrivate ? "none" : "index,follow";
 
   const documentHtml = escapeInject`<!DOCTYPE html>
