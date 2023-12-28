@@ -183,4 +183,18 @@ graph LR
 
 ## Release Flow
 
+### リポジトリ公開後
+
+Contentful でコンテンツを編集した後のデプロイを GUI で完結させるため、GitHub Actions を使用します。
+
+Actions の [Continuous Delivery ワークフロー](https://github.com/meguroes/next.meguro.es/actions/workflows/continuous_delivery.yaml) から、 `Run Workflow` ボタンを押下します。
+
+![スクリーンショット 2023-12-28 午後7 41 04](https://github.com/meguroes/next.meguro.es/assets/38882716/d8c5fc73-9dd7-4323-8714-54621267cde0)
+
+ブランチを `main` にセットし、ポップアップ内の `Run Workflow` を押下すると Cloudflare Pages にデプロイされます。
+
+![スクリーンショット 2023-12-28 午後7 41 13](https://github.com/meguroes/next.meguro.es/assets/38882716/c695f8a9-5536-4eb0-8ca5-3909623ce6e6)
+
+### リポジトリ公開前（公開後廃止予定）
+
 `main` ブランチに push すると Cloudflare Pages にデプロイされます。
