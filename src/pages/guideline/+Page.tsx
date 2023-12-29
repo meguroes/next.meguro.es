@@ -1,3 +1,4 @@
+import { ContactX } from "~/components/Contact";
 import {
   GUIDELINE_AGAINST_VIOLATION,
   GUIDELINE_AGAINST_VIOLATION_TITLE,
@@ -63,6 +64,9 @@ export default function Page() {
             </div>
           ))}
         </div>
+      </section>
+      <section>
+        <ContactX />
       </section>
     </>
   );
