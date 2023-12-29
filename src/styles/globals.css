@@ -66,6 +66,9 @@
     a {
       @apply underline;
     }
+    img {
+      @apply mx-auto w-full max-w-800;
+    }
   }
 }
 
