@@ -41,6 +41,9 @@ module.exports = {
         header: "var(--z-index-header)",
       },
       borderRadius: createConfig(),
+      lineHeight: {
+        ...createConfig(),
+      },
     },
   },
   plugins: [require("tailwind-children")],

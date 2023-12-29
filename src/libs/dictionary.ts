@@ -28,6 +28,12 @@ export const INFORMATION_LIST_TITLE = "お知らせ";
 export const CONTACT_ID = "Contact";
 export const CONTACT_TITLE = "ご連絡はこちらから";
 
+export const CONTACT_X_EMOJI = "👋";
+export const CONTACT_X_DESCRIPTION = [
+  'ご質問は公式X<a href="https://x.com/meguroes" target="_blank" rel="noopener noreferrer" class="underline">@meguroes</a>まで。',
+  "ダイレクトメッセージも開放しております。",
+];
+
 export const GUIDELINE_INTRO_ID = "Guideline";
 export const GUIDELINE_INTRO_TITLE = "ガイドラインへのご協力をお願いします";
 export const GUIDELINE_INTRO_DESCRIPTION = [
