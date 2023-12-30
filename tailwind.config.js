@@ -37,12 +37,23 @@ module.exports = {
         lobster: "var(--font-lobster)",
         sans: "var(--font-sans)",
       },
+      fontWeight: {
+        regular: 300,
+        bold: 600,
+        black: 800,
+      },
       zIndex: {
         header: "var(--z-index-header)",
       },
       borderRadius: createConfig(),
+      letterSpacing: {
+        1: "1px",
+        2: "2px",
+      },
       lineHeight: {
-        ...createConfig(),
+        100: "100%",
+        140: "140%",
+        180: "180%",
       },
     },
   },
