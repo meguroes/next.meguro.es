@@ -10,7 +10,7 @@ export const WantedSponsor = () => {
   return (
     <div className="space-y-48">
       <div className="space-y-24">
-        <h2 className="text-64 font-extrabold">{WANTED_SPONSOR_TITLE}</h2>
+        <h2 className="text-64 font-black">{WANTED_SPONSOR_TITLE}</h2>
         <div className="text-14">
           {WANTED_SPONSOR_DESCRIPTION.map((desc, index) => (
             <div key={index} dangerouslySetInnerHTML={{ __html: desc }} />

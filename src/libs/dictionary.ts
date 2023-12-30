@@ -42,10 +42,9 @@ export const GUIDELINE_INTRO_DESCRIPTION = [
   "みなさまのご協力があって Meguro.es が運営されています。ありがとうございます。",
 ];
 
-export const ABOUT = "私たちについて";
+export const ABOUT = "Meguro.esとは";
 export const ABOUT_TITLE = `${ABOUT}${TITLE_SUFFIX}`;
-export const ABOUT_DESCRIPTION = "Meguro.esとは";
-export const ABOUT_SUB_DESCRIPTION = [];
+export const ABOUT_DESCRIPTION = `Meguro.es は、目黒周辺で行うフロントエンド開発者のためのコミュニティーです。\n2ヶ月に1度フロントエンド開発者を対象にした勉強会（ミートアップ）を行っています。\n\nイベントは2部に分かれており、10分間の発表からなる登壇パートと、軽食といっしょに参加者と親睦を深める懇親会パートに分かれます。\n発表パートのみに参加することも可能ですが、参加者を懇親を深めることで更なる技術的成長の機会を作っていただければ幸いです。\n\n発表は、JavaScript初心者から上級者の方まで多くの方に発表を頂いております。`;
 export const ABOUT_SUMMARY: Paragraph[] = [];
 
 export const WANTED_SPONSOR_TITLE = "スポンサーを募集しています。";
