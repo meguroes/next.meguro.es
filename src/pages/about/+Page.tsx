@@ -23,7 +23,7 @@ export function Page() {
           ]}
         />
         <h1 className="text-32 font-bold leading-100 tracking-2">{ABOUT}</h1>
-        <p className="whitespace-pre text-14 font-light leading-180 tracking-2">
+        <p className="text-14 font-light leading-180 tracking-2">
           {ABOUT_DESCRIPTION}
         </p>
       </div>
@@ -36,23 +36,23 @@ export function Page() {
           sizes="small"
         />
         <p
-          className="mb-16 whitespace-pre text-14 font-regular leading-180 tracking-2"
+          className="mb-16 text-14 font-regular leading-180 tracking-2"
           dangerouslySetInnerHTML={{ __html: ABOUT_SECTION_1_DESCRIPTION }}
         />
-        <div className="flex">
+        <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <img
             src="/image_meguroes1.png"
             alt=""
             height={360}
             width={632}
-            className="mr-16 h-fit shrink-0 overflow-hidden rounded-24"
+            className="h-full shrink-0 overflow-hidden rounded-24 object-cover"
           />
           <img
             src="/image_meguroes2.png"
             alt=""
             height={360}
             width={632}
-            className="shrink-0 overflow-hidden rounded-24"
+            className="h-full shrink-0 overflow-hidden rounded-24 object-cover"
           />
         </div>
       </div>
