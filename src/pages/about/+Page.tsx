@@ -15,8 +15,8 @@ export function Page() {
             },
           ]}
         />
-        <h1 className="text-32 font-bold leading-100 tracking-2">{ABOUT}</h1>
-        <p className="whitespace-pre text-14 font-light leading-180 tracking-2">
+        <h1 className="leading-100 tracking-2 text-32 font-bold">{ABOUT}</h1>
+        <p className="leading-180 tracking-2 whitespace-pre text-14 font-light">
           {ABOUT_DESCRIPTION}
         </p>
       </div>
@@ -28,7 +28,7 @@ export function Page() {
           label="「ECMAScriptについて自由に語りあう」"
           sizes="small"
         />
-        <p className="mb-16 text-14 font-regular leading-180 tracking-2">
+        <p className="font-regular leading-180 tracking-2 mb-16 whitespace-pre text-14">
           ECMAScript に関連した話題であれば、何でも発表できます。
           <br />
           仕様・言語レベルから、ライブラリの深掘り、あなたの現場で用いている開発テクニックなど様々な話題で議論を深め、開発者の仲間を作る場にしていきましょう！
@@ -58,7 +58,7 @@ export function Page() {
           label="これまでの開催履歴"
           sizes="small"
         />
-        <p className="mb-16 text-14 font-regular leading-180 tracking-2">
+        <p className="font-regular leading-180 tracking-2 mb-16 text-14">
           過去の開催履歴は、開催履歴 を御覧ください。
           <br />
           開催の1ヶ月前に、募集のご案内を
