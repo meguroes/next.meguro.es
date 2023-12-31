@@ -10,6 +10,9 @@ export const WEBSITE_URL = "https://meguro.es";
 export const X_ACCOUNT_ID = "@meguroes";
 export const X_ACCOUNT_URL = `https://x.com/${X_ACCOUNT_ID}`;
 
+export const CONNPASS_ACCOUNT_URL = "https://meguroes.connpass.com";
+export const CONNPASS_ACCOUNT_ID = "@meguroes";
+
 export const TITLE_SUFFIX = " | Meguro.es";
 export const DEFAULT_TITLE = "Meguro.es";
 export const DEFAULT_DESCRIPTION =

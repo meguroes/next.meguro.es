@@ -30,6 +30,8 @@ import {
   LABEL_OPEN_GUIDELINE,
   RECENT_MEETUP_ID,
   LABEL_OPEN_MEETUP,
+  CONNPASS_ACCOUNT_ID,
+  CONNPASS_ACCOUNT_URL,
 } from "~/libs/dictionary";
 import { Post } from "~/libs/entities/Post";
 
@@ -304,10 +306,24 @@ export function Page() {
               <span className="text-28">{CONTACT_TITLE}</span>
             </a>
           </h2>
-          <div>
+          <div className="space-y-16">
             <a className="flex place-items-center gap-x-4" href={X_ACCOUNT_URL}>
               <img alt="x icon" src="/icon_x.svg" width={24} height={24} />
               <span className="pb-4 text-16 font-bold">{X_ACCOUNT_ID}</span>
+            </a>
+            <a
+              className="flex place-items-center gap-x-4"
+              href={CONNPASS_ACCOUNT_URL}
+            >
+              <img
+                alt="x icon"
+                src="/icon_connpass.svg"
+                width={24}
+                height={24}
+              />
+              <span className="pb-4 text-16 font-bold">
+                {CONNPASS_ACCOUNT_ID}
+              </span>
             </a>
           </div>
         </div>
