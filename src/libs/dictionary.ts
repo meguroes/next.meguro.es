@@ -44,7 +44,15 @@ export const GUIDELINE_INTRO_DESCRIPTION = [
 
 export const ABOUT = "Meguro.esとは";
 export const ABOUT_TITLE = `${ABOUT}${TITLE_SUFFIX}`;
-export const ABOUT_DESCRIPTION = `Meguro.es は、目黒周辺で行うフロントエンド開発者のためのコミュニティーです。\n2ヶ月に1度フロントエンド開発者を対象にした勉強会（ミートアップ）を行っています。\n\nイベントは2部に分かれており、10分間の発表からなる登壇パートと、軽食といっしょに参加者と親睦を深める懇親会パートに分かれます。\n発表パートのみに参加することも可能ですが、参加者を懇親を深めることで更なる技術的成長の機会を作っていただければ幸いです。\n\n発表は、JavaScript初心者から上級者の方まで多くの方に発表を頂いております。`;
+export const ABOUT_DESCRIPTION = [
+  "Meguro.es は、目黒周辺で行う ECMAScript 関連の開発者のためのコミュニティーです。",
+  "Webやネイティブ、IoTなど領域を問わず、ECMAScript を用いる開発者を対象にした勉強会（ミートアップ）を行っています。",
+  "<br>",
+  "イベントは10分間の発表からなる登壇・LTパートと、参加者と親睦を深めるフリートークパートの2部構成です。",
+  "発表パートのみに参加することも可能ですが、他の参加者と交流を深めることで更なる技術的成長の機会を作っていただければ幸いです。",
+  "<br>",
+  "発表は、開発の初心者から上級者の方まで多くの方に発表を頂いております。",
+];
 export const ABOUT_SECTION_1_HEADDING = "「ECMAScriptについて自由に語りあう」";
 export const ABOUT_SECTION_1_DESCRIPTION =
   "ECMAScript に関連した話題であれば、何でも発表できます\n仕様・言語レベルから、ライブラリの深掘り、あなたの現場で用いている開発テクニックなど様々な話題で議論を深め、開発者の仲間を作る場にしていきましょう！";
