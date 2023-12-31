@@ -103,8 +103,6 @@ export function Page() {
                       <div className="grow">
                         <a
                           href={context.data.recentMeetup.fields.locationUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
                           className="flex w-fit place-items-center gap-x-6 text-10"
                         >
                           <img
@@ -210,8 +208,6 @@ export function Page() {
                     </span>
                     <a
                       href={meetup.fields.locationUrl}
-                      rel="noopener noreferrer"
-                      target="_blank"
                       className="flex place-items-center gap-x-6 text-12 md:w-216 md:text-18"
                     >
                       <img
