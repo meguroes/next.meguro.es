@@ -42,11 +42,15 @@ export const GUIDELINE_INTRO_DESCRIPTION = [
   "みなさまのご協力があって Meguro.es が運営されています。ありがとうございます。",
 ];
 
-export const ABOUT = "私たちについて";
+export const ABOUT = "Meguro.esとは";
 export const ABOUT_TITLE = `${ABOUT}${TITLE_SUFFIX}`;
-export const ABOUT_DESCRIPTION = "Meguro.esとは";
-export const ABOUT_SUB_DESCRIPTION = [];
-export const ABOUT_SUMMARY: Paragraph[] = [];
+export const ABOUT_DESCRIPTION = `Meguro.es は、目黒周辺で行うフロントエンド開発者のためのコミュニティーです。\n2ヶ月に1度フロントエンド開発者を対象にした勉強会（ミートアップ）を行っています。\n\nイベントは2部に分かれており、10分間の発表からなる登壇パートと、軽食といっしょに参加者と親睦を深める懇親会パートに分かれます。\n発表パートのみに参加することも可能ですが、参加者を懇親を深めることで更なる技術的成長の機会を作っていただければ幸いです。\n\n発表は、JavaScript初心者から上級者の方まで多くの方に発表を頂いております。`;
+export const ABOUT_SECTION_1_HEADDING = "「ECMAScriptについて自由に語りあう」";
+export const ABOUT_SECTION_1_DESCRIPTION =
+  "ECMAScript に関連した話題であれば、何でも発表できます\n仕様・言語レベルから、ライブラリの深掘り、あなたの現場で用いている開発テクニックなど様々な話題で議論を深め、開発者の仲間を作る場にしていきましょう！";
+export const ABOUT_SECTION_2_HEADDING = "これまでの開催履歴";
+export const ABOUT_SECTION_2_DESCRIPTION =
+  "過去の開催履歴は、開催履歴 を御覧ください。<br />開催の1ヶ月前に、募集のご案内を<a href='https://twitter.com/meguroes/' target='_blank' rel='noopener noreferrer' class='underline'>公式X</a>と<a href='https://meguroes.connpass.com/' target='_blank' rel='noopener noreferrer' class='underline'>公式connpass</a>にて行います。<br />通知を受け取れるよう、Xアカウントのフォローとconnpassのメンバー登録をお願いします。";
 
 export const WANTED_SPONSOR_TITLE = "スポンサーを募集しています。";
 export const WANTED_SPONSOR_DESCRIPTION = [
