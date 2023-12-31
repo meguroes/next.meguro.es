@@ -38,7 +38,7 @@ const onRenderClient: OnRenderClientAsync = async (
       pageContext.data?.description || DEFAULT_DESCRIPTION,
     );
   const textGradientPrimaryStyle =
-    " background: linear-gradient(to bottom, #fbb0d9 0%, #a56bc6 100%); color: transparent; -webkit-background-clip: text; background-clip: text;";
+    "background: linear-gradient(to bottom, #fbb0d9 0%, #a56bc6 100%); color: transparent; -webkit-background-clip: text; background-clip: text;";
   const wantedTitleStyle = `font-family: Noto Sans JP, sans-serif; font-size: 32px; font-weight: bold; ${textGradientPrimaryStyle}`;
   const wantedDescriptionStyle = `font-family: Noto Sans JP, sans-serif; font-size: 14px;`;
   /* eslint no-console: "off" */
