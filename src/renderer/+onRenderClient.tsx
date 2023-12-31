@@ -4,7 +4,13 @@ export { onRenderClient };
 import { Providers } from "~/components/Providers";
 import { hydrate } from "preact";
 import type { OnRenderClientAsync } from "vike/types";
-import { DEFAULT_DESCRIPTION, DEFAULT_TITLE } from "~/libs/dictionary";
+import {
+  CONSOLE_ASCII_ART_LOGO,
+  CONSOLE_WANTED_DESCRIPTION,
+  CONSOLE_WANTED_TITLE,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_TITLE,
+} from "~/libs/dictionary";
 
 // This onRenderClient() hook only supports SSR, see https://vike.dev/render-modes for how to modify onRenderClient()
 // to support SPA
@@ -31,4 +37,19 @@ const onRenderClient: OnRenderClientAsync = async (
       "content",
       pageContext.data?.description || DEFAULT_DESCRIPTION,
     );
+  const textGradientPrimaryStyle =
+    " background: linear-gradient(to bottom, #fbb0d9 0%, #a56bc6 100%); color: transparent; -webkit-background-clip: text; background-clip: text;";
+  const wantedTitleStyle = `font-family: Noto Sans JP, sans-serif; font-size: 32px; font-weight: bold; ${textGradientPrimaryStyle}`;
+  const wantedDescriptionStyle = `font-family: Noto Sans JP, sans-serif; font-size: 14px;`;
+  /* eslint no-console: "off" */
+  console.log(
+    `%c${CONSOLE_ASCII_ART_LOGO}
+
+%c${CONSOLE_WANTED_TITLE}
+%c${CONSOLE_WANTED_DESCRIPTION}
+`,
+    textGradientPrimaryStyle,
+    wantedTitleStyle,
+    wantedDescriptionStyle,
+  );
 };

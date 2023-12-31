@@ -13,6 +13,7 @@
         "argsIgnorePattern": "^_"
       }
     ],
+    "no-console": "error",
     "react/no-danger": "off"
   }
 }

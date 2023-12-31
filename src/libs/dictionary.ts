@@ -226,3 +226,34 @@ export const LABEL_FINISHED = "公開終了";
 export const LABEL_READ_MORE = "さらに読み込む";
 export const LABEL_OPEN_GUIDELINE = "ガイドラインを見る";
 export const LABEL_OPEN_MEETUP = "イベント詳細へ";
+
+export const CONSOLE_ASCII_ART_LOGO = `
+                                                  
+                                                  
+                                                  
+                                                  
+                               ..                 
+             .:odxdo:.   .oo   '0,                
+           'x0KKKKKKK0l. .00c:ox00c.              
+          '0KKKKKKKKKKKx. xKKKKKKKKo              
+          cK0O0KKKKKKKKK';0KKKKKKKK0,             
+          ;d. .OKKKKKKK0;0KKKKKKKKKKd             
+          ..  :0KKKKKK0lkKKKKKXNXKXN0.            
+            .c0KKKKK00;;00000KMMMMMM0;            
+            ;0000000O' l0000OKNXWMWN0l            
+            d00000OOx  oOOOOOXWMMMMMXd.           
+            cOOOOOOOk;.dkkkkk0XNMMMMNk.           
+            .ckkkkkkkkxkkkkkkxxxWMMMKxd'          
+              .;loxxxxxxxxxxxxxOMMMMkdd,          
+                   .....ddddddxWMMWOdd;.          
+                        .,:lddxko;..,c:.          
+                           .'c:.      ..          
+                              .                   
+                                                  
+                                                  
+                                                  
+                                                  
+`;
+export const CONSOLE_WANTED_TITLE = "🐿 スポンサーを募集しています。";
+export const CONSOLE_WANTED_DESCRIPTION =
+  "希望される方や詳しく話を聞きたい方は https://x.com/meguroes の DM までご連絡ください。";
