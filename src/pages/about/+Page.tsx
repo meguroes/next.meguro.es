@@ -25,13 +25,13 @@ export function Page() {
           as="h2"
           caption="Concept"
           className="mb-16"
-          label="「乾杯から始める勉強会」"
+          label="「ECMAScriptについて自由に語りあう」"
           sizes="small"
         />
         <p className="mb-16 text-14 font-regular leading-180 tracking-2">
-          「乾杯から始める勉強会」をコンセプトにカジュアルなイベントを行っております。
+          ECMAScript に関連した話題であれば、何でも発表できます。
           <br />
-          お酒やソフトドリンクを飲みながら発表を聞き、時には自ら発表し、JSer、フロントエンドエンジニアの仲間を作る場にしていきましょう！
+          仕様・言語レベルから、ライブラリの深掘り、あなたの現場で用いている開発テクニックなど様々な話題で議論を深め、開発者の仲間を作る場にしていきましょう！
         </p>
         <div className="flex">
           <img
@@ -59,18 +59,9 @@ export function Page() {
           sizes="small"
         />
         <p className="mb-16 text-14 font-regular leading-180 tracking-2">
-          Meguro.esは、2ヶ月に1回程度の頻度で開催しています。
+          過去の開催履歴は、開催履歴 を御覧ください。
           <br />
-          過去の開催履歴は、
-          <a
-            href="https://meguroes.connpass.com/event/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline"
-          >
-            開催履歴
-          </a>
-          をご覧ください。 また開催・募集のご案内は
+          開催の1ヶ月前に、募集のご案内を
           <a
             href="https://twitter.com/meguroes/"
             target="_blank"
@@ -79,7 +70,18 @@ export function Page() {
           >
             公式X
           </a>
+          と
+          <a
+            href="https://meguroes.connpass.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            公式connpass
+          </a>
           にて行います。
+          <br />
+          通知を受け取れるよう、Xアカウントのフォローとconnpassのメンバー登録をお願いします。
         </p>
       </div>
       <hr className="border-white" />
