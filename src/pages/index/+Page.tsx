@@ -253,7 +253,8 @@ export function Page() {
                         className="h-200 w-full rounded-12 object-cover object-center md:h-240"
                         alt={`${post.fields.title} Thumbnail`}
                         src={
-                          post.fields.heroImageUrl || "/image_hero_fallback.png"
+                          post.fields.heroImageUrl ||
+                          "/image_information_hero_fallback.png"
                         }
                       />
                       <h3 className="min-h-[calc(2em_*_2)] text-20 font-bold md:text-24">
