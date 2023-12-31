@@ -1,4 +1,5 @@
 import { Breadcrumb } from "~/components/Breadcrumb";
+import { ContactX } from "~/components/Contact";
 import { SectionHeader } from "~/components/SectionHeader";
 import { WantedSponsor } from "~/components/WantedSponsor";
 import {
@@ -71,6 +72,9 @@ export function Page() {
       </div>
       <hr className="border-white" />
       <WantedSponsor />
+      <section>
+        <ContactX />
+      </section>
     </main>
   );
 }

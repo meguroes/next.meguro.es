@@ -59,7 +59,7 @@ export function Page() {
   return (
     <>
       {/* eslint tailwindcss/enforces-negative-arbitrary-values: "off" */}
-      <section className="relative h-[100vh] max-h-800 overflow-hidden md:-mt-[var(--height-header)]">
+      <section className="relative h-[100vh] max-h-800 overflow-hidden md:-mt-[calc(var(--height-header)_+_var(--spacing-header))]">
         <img
           alt="Meguro.es Icon"
           src="/icon_squirrel.svg"

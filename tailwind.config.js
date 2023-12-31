@@ -11,7 +11,10 @@ module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
-      spacing: createConfig(),
+      spacing: {
+        ...createConfig(),
+        header: "var(--spacing-header)",
+      },
       fontSize: createConfig(),
       width: createConfig(),
       height: {
