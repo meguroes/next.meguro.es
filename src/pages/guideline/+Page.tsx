@@ -1,3 +1,4 @@
+import { Breadcrumb } from "~/components/Breadcrumb";
 import { ContactX } from "~/components/Contact";
 import { SectionHeaderCaption } from "~/components/SectionHeaderCaption";
 import {
@@ -14,6 +15,14 @@ export default function Page() {
   return (
     <div className="space-y-64 md:space-y-120">
       <section className="space-y-48">
+        <Breadcrumb
+          items={[
+            {
+              to: "/guideline",
+              label: "ガイドライン",
+            },
+          ]}
+        />
         <h2 className="text-32 font-bold">{GUIDELINE_DESCRIPTION}</h2>
         <div>
           {GUIDELINE_SUB_DESCRIPTION.map((desc, index) => (
