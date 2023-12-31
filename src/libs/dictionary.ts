@@ -33,7 +33,7 @@ export const CONTACT_TITLE = "ご連絡はこちらから";
 
 export const CONTACT_X_EMOJI = "👋";
 export const CONTACT_X_DESCRIPTION = [
-  'ご質問は公式X<a href="https://x.com/meguroes" target="_blank" rel="noopener noreferrer" class="underline">@meguroes</a>まで。',
+  'ご質問は公式X<a href="https://x.com/meguroes" class="underline">@meguroes</a>まで。',
   "ダイレクトメッセージも開放しております。",
 ];
 
@@ -58,7 +58,7 @@ export const ABOUT_DESCRIPTION = [
 ];
 export const ABOUT_SECTION_1_HEADDING = "「ECMAScriptについて自由に語りあう」";
 export const ABOUT_SECTION_1_DESCRIPTION =
-  "ECMAScript に関連した話題であれば、何でも発表できます\n仕様・言語レベルから、ライブラリの深掘り、あなたの現場で用いている開発テクニックなど様々な話題で議論を深め、開発者の仲間を作る場にしていきましょう！";
+  "ECMAScript に関連した話題であれば、何でも発表できます。<br>仕様・言語レベルから、ライブラリの深掘り、あなたの現場で用いている開発テクニックなど様々な話題で議論を深め、開発者の仲間を作る場にしていきましょう！";
 export const ABOUT_SECTION_2_HEADDING = "これまでの開催履歴";
 export const ABOUT_SECTION_2_DESCRIPTION =
   "過去の開催履歴は、開催履歴 を御覧ください。<br />開催の1ヶ月前に、募集のご案内を<a href='https://twitter.com/meguroes/' target='_blank' rel='noopener noreferrer' class='underline'>公式X</a>と<a href='https://meguroes.connpass.com/' target='_blank' rel='noopener noreferrer' class='underline'>公式connpass</a>にて行います。<br />通知を受け取れるよう、Xアカウントのフォローとconnpassのメンバー登録をお願いします。";
