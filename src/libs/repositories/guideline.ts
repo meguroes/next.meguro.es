@@ -7,8 +7,7 @@ export const guideline = {
   findAll: async (): Promise<Result<Guideline, Error>> => {
     try {
       const guideline = await client.getEntries({
-        content_type: "article",
-        "fields.name": "guideline",
+        content_type: "guideline",
         limit: 1,
       });
       return new Ok(new GuidelineOutput(guideline.items[0]));

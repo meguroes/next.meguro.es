@@ -4,6 +4,7 @@ import { usePageContext } from "~/hooks/usePageContext";
 
 export default function Page() {
   const context = usePageContext();
+  const wantedSponsor = context?.data?.wantedSponsor;
   return (
     <div className="space-y-120">
       <section className="space-y-48">
@@ -22,7 +23,7 @@ export default function Page() {
           className="post border-b border-white pb-120"
         />
       </section>
-      <WantedSponsor />
+      {wantedSponsor?.fields && <WantedSponsor {...wantedSponsor.fields} />}
     </div>
   );
 }

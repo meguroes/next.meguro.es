@@ -1,10 +1,20 @@
+import { render } from "vike/abort";
 import { PageContext } from "vike/types";
-import { ABOUT_DESCRIPTION, ABOUT_TITLE } from "~/libs/dictionary";
+import { getAbout } from "~/libs/usecases/getAbout";
+import { getWantedSponsor } from "~/libs/usecases/getWantedSponsor";
 
 export async function data(_pageContext: PageContext) {
-  return {
-    title: ABOUT_TITLE,
-    description: ABOUT_DESCRIPTION[0],
-    about: data,
-  };
+  const aboutRes = await getAbout();
+  const wantedSponsorRes = await getWantedSponsor();
+  if (aboutRes.isOk() && wantedSponsorRes.isOk()) {
+    const about = aboutRes.unwrap();
+    const wantedSponsor = wantedSponsorRes.unwrap();
+    return {
+      title: about.fields.og.title,
+      description: about.fields.og.description,
+      about,
+      wantedSponsor,
+    };
+  }
+  throw render(503);
 }

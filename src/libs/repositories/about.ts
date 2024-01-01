@@ -7,8 +7,7 @@ export const about = {
   findAll: async (): Promise<Result<About, Error>> => {
     try {
       const about = await client.getEntries({
-        content_type: "article",
-        "fields.name": "about",
+        content_type: "about",
         limit: 1,
       });
       return new Ok(new AboutOutput(about.items[0]));

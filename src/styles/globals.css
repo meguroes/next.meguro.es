@@ -62,6 +62,13 @@
       @apply mx-auto w-full max-w-800;
     }
   }
+
+  .about,
+  .guideline {
+    a {
+      @apply underline;
+    }
+  }
 }
 
 @layer utilities {

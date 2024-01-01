@@ -2,18 +2,14 @@ import { Breadcrumb } from "~/components/Breadcrumb";
 import { ContactX } from "~/components/Contact";
 import { SectionHeader } from "~/components/SectionHeader";
 import { WantedSponsor } from "~/components/WantedSponsor";
-import {
-  ABOUT,
-  ABOUT_DESCRIPTION,
-  ABOUT_SECTION_1_DESCRIPTION,
-  ABOUT_SECTION_1_HEADDING,
-  ABOUT_SECTION_2_DESCRIPTION,
-  ABOUT_SECTION_2_HEADDING,
-} from "~/libs/dictionary";
+import { usePageContext } from "~/hooks/usePageContext";
 
 export function Page() {
+  const context = usePageContext();
+  const about = context?.data?.about;
+  const wantedSponsor = context?.data?.wantedSponsor;
   return (
-    <main class="grid grid-cols-1 gap-120">
+    <main class="about grid grid-cols-1 gap-120">
       <div class="grid grid-cols-1 gap-48">
         <Breadcrumb
           items={[
@@ -23,24 +19,25 @@ export function Page() {
             },
           ]}
         />
-        <h1 className="text-32 font-bold leading-100 tracking-2">{ABOUT}</h1>
-        <div className="text-14 font-light leading-180 tracking-2">
-          {ABOUT_DESCRIPTION.map((desc, index) => (
-            <p key={index} dangerouslySetInnerHTML={{ __html: desc }} />
-          ))}
-        </div>
+        <h1 className="text-32 font-bold leading-100 tracking-2">
+          {about?.fields.title}
+        </h1>
+        <div
+          className="text-14 font-light leading-180 tracking-2"
+          dangerouslySetInnerHTML={{ __html: about?.fields.summary || "" }}
+        />
       </div>
       <div>
         <SectionHeader
           as="h2"
           caption="Concept"
           className="mb-16"
-          label={ABOUT_SECTION_1_HEADDING}
+          label={about?.fields.conceptTitle || ""}
           sizes="small"
         />
-        <p
+        <div
           className="mb-16 text-14 font-regular leading-180 tracking-2"
-          dangerouslySetInnerHTML={{ __html: ABOUT_SECTION_1_DESCRIPTION }}
+          dangerouslySetInnerHTML={{ __html: about?.fields.concept || "" }}
         />
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <img
@@ -64,16 +61,16 @@ export function Page() {
           as="h2"
           caption="Concept"
           className="mb-16"
-          label={ABOUT_SECTION_2_HEADDING}
+          label={about?.fields.historyTitle || ""}
           sizes="small"
         />
-        <p
+        <div
           className="mb-16 text-14 font-regular leading-180 tracking-2"
-          dangerouslySetInnerHTML={{ __html: ABOUT_SECTION_2_DESCRIPTION }}
+          dangerouslySetInnerHTML={{ __html: about?.fields.history || "" }}
         />
       </div>
       <hr className="border-white" />
-      <WantedSponsor />
+      {wantedSponsor?.fields && <WantedSponsor {...wantedSponsor.fields} />}
       <section>
         <ContactX />
       </section>

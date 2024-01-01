@@ -1,9 +1,16 @@
+import { render } from "vike/abort";
 import { PageContext } from "vike/types";
-import { GUIDELINE_DESCRIPTION, GUIDELINE_TITLE } from "~/libs/dictionary";
+import { getGuideline } from "~/libs/usecases/getGuideline";
 
 export async function data(_pageContext: PageContext) {
-  return {
-    title: GUIDELINE_TITLE,
-    description: GUIDELINE_DESCRIPTION,
-  };
+  const res = await getGuideline();
+  if (res.isOk()) {
+    const data = res.unwrap();
+    return {
+      title: data.fields.og.title,
+      description: data.fields.og.description,
+      guideline: data,
+    };
+  }
+  throw render(503);
 }

@@ -1,4 +1,5 @@
 import { marked } from "marked";
+import { Brand } from "~/types/brand";
 
 export const parseMarkdown = (markdown: string) => {
   /**
@@ -7,3 +8,13 @@ export const parseMarkdown = (markdown: string) => {
    */
   return marked.parse(markdown, { async: false }) as string;
 };
+
+export type StringWithoutHtml = Brand<string, "htmllessStringBrand">;
+const htmlRegExp = /<\/?[^>]+(>|$)/g;
+function isStringWithoutHtml(str: string): str is StringWithoutHtml {
+  return !str.match(htmlRegExp);
+}
+export function getStringWithoutHtml(str: string) {
+  const parsed = str.replace(htmlRegExp, "");
+  return isStringWithoutHtml(parsed) ? parsed : ("" as StringWithoutHtml);
+}
