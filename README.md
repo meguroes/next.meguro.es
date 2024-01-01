@@ -4,21 +4,30 @@
 
 はじめに `.env.example` を `.env` にコピーし、管理者からトークンを受け取って貼り付けてください。
 
-以下で <http://localhost:3000> に開発サーバーが立ち上がります。
+以下で開発サーバーが立ち上がります。URL は <http://localhost:3000> です。
 
 ```shell
 npm ci .
 npm run dev
 ```
 
-ローカルで Static Site Geneation(以下、SSG) して確認する際は、以下で <http://localhost:3000> に開発サーバーが立ち上がります。
+ローカルで Static Site Geneation(以下、SSG) して確認する際は、以下でサーバーが立ち上がります。URL は開発サーバと同じ <http://localhost:3000> です。
 
 ```shell
 npm run build
 npm run start
 ```
 
-その他に有効な npm scripts は `npm run` で確認してください。
+次に [バックエンド](https://github.com/meguroes/backend) をクローンし、以下で開発サーバーを立ち上げます。URLは <http://localhost:5432> です。
+
+```shell
+npm ci .
+npm run dev
+```
+
+バックエンドのセットアップが完了すると、クライアントサイドで CMS の内容を取得する箇所が動作します。
+
+バックエンドの開発方法についてここでは触れませんが、開発する場合は適宜 [バックエンドのREADME](https://github.com/meguroes/backend#readme) を参照してください。
 
 ## Project Structure
 
