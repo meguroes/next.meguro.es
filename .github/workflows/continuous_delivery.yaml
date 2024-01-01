@@ -27,8 +27,9 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PUBLIC_ENV__CONTENTFUL_SPACE_ID: ${{ secrets.PUBLIC_ENV__CONTENTFUL_SPACE_ID }}
-          PUBLIC_ENV__CONTENTFUL_ACCESS_TOKEN: ${{ secrets.PUBLIC_ENV__CONTENTFUL_ACCESS_TOKEN }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
+          PUBLIC_ENV__API_URL: ${{ secrets.PUBLIC_ENV__API_URL }}
 
       - name: Deploy
         uses: cloudflare/pages-action@1

@@ -10,8 +10,8 @@ class Contentful {
 
   constructor() {
     this.#client = createClient({
-      space: import.meta.env.PUBLIC_ENV__CONTENTFUL_SPACE_ID,
-      accessToken: import.meta.env.PUBLIC_ENV__CONTENTFUL_ACCESS_TOKEN,
+      space: import.meta.env.CONTENTFUL_SPACE_ID,
+      accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN,
     });
   }
 

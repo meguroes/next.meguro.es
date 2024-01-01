@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { Post } from "~/libs/entities/Post";
-import { getPostList } from "~/libs/usecases/getPostList";
+import { getPostListClient } from "~/libs/usecases/getPostListClient";
 
 export const useGetPostList = (page?: number, limit?: number) => {
   const [data, setData] = useState<Post[]>([]);
@@ -9,7 +9,7 @@ export const useGetPostList = (page?: number, limit?: number) => {
 
   useEffect(() => {
     setIsLoading(true);
-    getPostList({ page, limit })
+    getPostListClient({ page, limit })
       .then((res) => {
         if (res.isOk()) {
           setData(res.unwrap());
