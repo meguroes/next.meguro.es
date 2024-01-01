@@ -14,7 +14,7 @@ const htmlRegExp = /<\/?[^>]+(>|$)/g;
 function isStringWithoutHtml(str: string): str is StringWithoutHtml {
   return !str.match(htmlRegExp);
 }
-export function getStringWithoutHtml(str: string) {
+export function parseStringWithoutHtml(str: string) {
   const parsed = str.replace(htmlRegExp, "");
   return isStringWithoutHtml(parsed) ? parsed : ("" as StringWithoutHtml);
 }

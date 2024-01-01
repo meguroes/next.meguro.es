@@ -1,5 +1,5 @@
 import { Entries } from "~/libs/contentful";
-import { getStringWithoutHtml, parseMarkdown } from "~/libs/parser";
+import { parseStringWithoutHtml, parseMarkdown } from "~/libs/parser";
 import { About } from "~/libs/entities/About";
 
 export class AboutOutput implements About {
@@ -14,7 +14,7 @@ export class AboutOutput implements About {
       history: parseMarkdown(String(fields.history || "")),
       og: {
         title: String(fields.title || ""),
-        description: getStringWithoutHtml(
+        description: parseStringWithoutHtml(
           String(fields.summary || "").replace(/\n/g, ""),
         ),
       },

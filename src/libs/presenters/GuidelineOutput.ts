@@ -1,5 +1,5 @@
 import { Entries } from "~/libs/contentful";
-import { getStringWithoutHtml, parseMarkdown } from "~/libs/parser";
+import { parseStringWithoutHtml, parseMarkdown } from "~/libs/parser";
 import { Guideline } from "~/libs/entities/Guideline";
 
 export class GuidelineOutput implements Guideline {
@@ -36,7 +36,7 @@ export class GuidelineOutput implements Guideline {
       aboutSponsors: parseMarkdown(String(fields.about_sponsors || "")),
       og: {
         title: String(fields.title || ""),
-        description: getStringWithoutHtml(
+        description: parseStringWithoutHtml(
           String(fields.summary || "").replace(/\n/g, ""),
         ),
       },
