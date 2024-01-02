@@ -59,7 +59,7 @@ export function Page() {
       <div>
         <SectionHeader
           as="h2"
-          caption="Concept"
+          caption="History"
           className="mb-16"
           label={about?.fields.historyTitle || ""}
           sizes="small"

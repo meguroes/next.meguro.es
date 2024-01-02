@@ -8,14 +8,14 @@ export const CONNPASS_ACCOUNT_ID = "@meguroes";
 export const TITLE_SUFFIX = " | Meguro.es";
 export const DEFAULT_TITLE = "Meguro.es";
 export const DEFAULT_DESCRIPTION =
-  "Meguro.esは目黒周辺のフロントエンド開発者による勉強会です";
+  "Meguro.esは、目黒周辺の ECMAScript 関連の開発者のためのコミュニティーです。";
 
 export const RECENT_MEETUP_ID = "Recent Event";
 
 export const WE_ARE_BACK_ID = "We are back!";
 export const WE_ARE_BACK_TITLE = "Meguro.esが帰ってきました！";
 export const WE_ARE_BACK_DESCRIPTION =
-  "Meguro.es は、目黒周辺のフロントエンドエンジニアによる勉強会コミュニティです。このサイトでは、二ヶ月ごとに開催されるイベントの過去のミートアップの情報や、運営に関する情報をお知らせします。";
+  "Meguro.esは、目黒周辺の ECMAScript 関連の開発者のためのコミュニティーです。このサイトでは、開催されたミートアップの情報や、コミュニティの運営に関する情報をお知らせします。";
 
 export const INFORMATION_LIST_ID = "Information";
 export const INFORMATION_LIST_TITLE = "お知らせ";
