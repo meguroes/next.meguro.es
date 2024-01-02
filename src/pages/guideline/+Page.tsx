@@ -70,7 +70,7 @@ export default function Page() {
   );
 
   return (
-    <div className="guideline space-y-64 md:space-y-120">
+    <div className="guideline space-y-64 px-20 md:space-y-120 md:p-80">
       <section className="space-y-48">
         <Breadcrumb
           items={[

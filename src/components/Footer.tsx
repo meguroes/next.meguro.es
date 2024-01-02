@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { HTMLAttributes } from "preact/compat";
 import { ABOUT, GUIDELINE, MEETUP_LIST } from "~/libs/dictionary";
 
@@ -23,19 +24,30 @@ const navItems: {
 
 export const Footer = () => {
   return (
-    <footer className="footer space-y-16 bg-darknavy p-24 text-center md:px-80">
-      <nav>
-        <ul className="flex place-content-center gap-x-20 text-10 text-white md:gap-x-48 md:text-12">
-          {navItems.map((item) => (
+    <footer className="footer bg-darknavy p-24">
+      <nav className="mb-12 md:mb-16">
+        <ul className="flex place-content-center">
+          {navItems.map((item, index) => (
             <li key={item.name}>
-              <a href={item.href} target={item.target}>
+              <a
+                href={item.href}
+                target={item.target}
+                className={clsx(
+                  "block text-10 font-light leading-100 tracking-2 text-white md:text-12",
+                  {
+                    "ml-20 md:ml-48": index !== 0,
+                  },
+                )}
+              >
                 {item.name}
               </a>
             </li>
           ))}
         </ul>
       </nav>
-      <small className="text-10 text-gray">&copy; Meguro.es</small>
+      <small className="block text-center text-10 leading-100 tracking-2 text-gray">
+        &copy; Meguro.es
+      </small>
     </footer>
   );
 };
