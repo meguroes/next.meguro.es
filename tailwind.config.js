@@ -43,7 +43,7 @@ module.exports = {
       },
       fontWeight: {
         regular: 300,
-        bold: 500,
+        bold: 600,
         black: 800,
       },
       zIndex: {

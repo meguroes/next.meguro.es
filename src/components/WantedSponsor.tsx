@@ -1,6 +1,6 @@
-import { SectionHeaderCaption } from "./SectionHeaderCaption";
 import { WantedSponsor as WantedSponsorEntity } from "~/libs/entities/WantedSponsor";
 import { useMemo } from "preact/hooks";
+import { SectionHeader } from "./SectionHeader";
 
 export const WantedSponsor = ({
   title,
@@ -41,30 +41,33 @@ export const WantedSponsor = ({
     ],
   );
   return (
-    <div className="space-y-48">
-      <div className="space-y-24">
-        <h2 className="text-64 font-black">{title}</h2>
-        <div className="text-14">
-          <div dangerouslySetInnerHTML={{ __html: summary }} />
-        </div>
+    <section className="space-y-48">
+      <h2 className="mb-24 text-64 font-black leading-[120%]">{title}</h2>
+      <div className="text-14 font-light leading-180 tracking-2">
+        <p dangerouslySetInnerHTML={{ __html: summary }} />
       </div>
       <div className="space-y-32">
-        <h3 className="text-20 font-bold">{rewardsTitle}</h3>
-        <ul className="grid grid-cols-1 gap-48 md:grid-cols-3">
+        <h3 className="text-20 font-bold leading-140 tracking-2">
+          {rewardsTitle}
+        </h3>
+        <ul className="grid grid-cols-1 gap-48 md:grid-cols-2 lg:grid-cols-3">
           {rewards.map((reward) => (
-            <ol key={reward.id} className="space-y-20">
-              <div className="space-y-12">
-                <SectionHeaderCaption text={reward.id} />
-                <h4 className="text-20 font-bold">{reward.title}</h4>
-              </div>
-              <div
-                className="text-14"
+            <ol key={reward.id}>
+              <SectionHeader
+                as="h4"
+                caption={reward.id}
+                className="mb-20"
+                label={reward.title}
+                sizes="small"
+              />
+              <p
+                className="text-14 font-light leading-180 tracking-2"
                 dangerouslySetInnerHTML={{ __html: reward.desc }}
               />
             </ol>
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };

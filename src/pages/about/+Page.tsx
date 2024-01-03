@@ -64,7 +64,7 @@ export function Page() {
           label={about?.fields.historyTitle || ""}
           sizes="small"
         />
-        <div
+        <p
           className="mb-16 text-14 font-regular leading-180 tracking-2"
           dangerouslySetInnerHTML={{ __html: about?.fields.history || "" }}
         />
