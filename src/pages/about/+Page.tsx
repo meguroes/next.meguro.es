@@ -8,6 +8,7 @@ export function Page() {
   const context = usePageContext();
   const about = context?.data?.about;
   const wantedSponsor = context?.data?.wantedSponsor;
+
   return (
     <main class="about grid grid-cols-1 gap-120 px-20 md:p-80">
       <div class="grid grid-cols-1 gap-48">
@@ -64,7 +65,7 @@ export function Page() {
           label={about?.fields.historyTitle || ""}
           sizes="small"
         />
-        <p
+        <div
           className="mb-16 text-14 font-regular leading-180 tracking-2"
           dangerouslySetInnerHTML={{ __html: about?.fields.history || "" }}
         />

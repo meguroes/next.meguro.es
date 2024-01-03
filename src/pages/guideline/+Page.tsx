@@ -98,7 +98,7 @@ export default function Page() {
               label={slogan.title}
               sizes="small"
             />
-            <p
+            <div
               className="text-14 font-light leading-180 tracking-2"
               dangerouslySetInnerHTML={{ __html: slogan.desc }}
             />
@@ -119,7 +119,7 @@ export default function Page() {
                 label={againstViolation.title}
                 sizes="small"
               />
-              <p
+              <div
                 className="text-14 font-light leading-180 tracking-2"
                 dangerouslySetInnerHTML={{ __html: againstViolation.desc }}
               />
@@ -141,7 +141,7 @@ export default function Page() {
                 label={supplement.title}
                 sizes="small"
               />
-              <p
+              <div
                 className="text-14 font-light leading-180 tracking-2"
                 dangerouslySetInnerHTML={{ __html: supplement.desc }}
               />
