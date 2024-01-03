@@ -194,7 +194,7 @@ export function Page() {
                   <td className="flex items-center px-0 py-24 lg:table-cell lg:pl-4 lg:pr-32">
                     <p
                       className={clsx(
-                        "h-fit whitespace-nowrap rounded-8 py-8 pl-12 pr-10 text-center text-14 font-bold leading-100 tracking-2 md:rounded-12 md:py-12 md:pl-16 md:pr-14 md:text-18",
+                        "h-fit w-fit whitespace-nowrap rounded-8 py-8 pl-12 pr-10 text-center text-14 font-bold leading-100 tracking-2 md:rounded-12 md:py-12 md:pl-16 md:pr-14 md:text-18",
                         {
                           "bg-white-alpha12 text-white": !isComingSoon,
                           "bg-gradient-primary relative before:absolute before:inset-0 before:m-2 before:rounded-6 before:bg-navy md:before:rounded-10":

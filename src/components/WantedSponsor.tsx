@@ -60,7 +60,7 @@ export const WantedSponsor = ({
                 label={reward.title}
                 sizes="small"
               />
-              <p
+              <div
                 className="text-14 font-light leading-180 tracking-2"
                 dangerouslySetInnerHTML={{ __html: reward.desc }}
               />
