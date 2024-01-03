@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import { useEffect, useState } from "preact/hooks";
+import { SectionHeader } from "~/components/SectionHeader";
 import { SectionHeaderCaption } from "~/components/SectionHeaderCaption";
 import { Skeleton } from "~/components/Skeleton";
 import { useGetPostList } from "~/hooks/useGetPostList";
 import { usePageContext } from "~/hooks/usePageContext";
-import { useThrottle } from "~/hooks/useThrottle";
 import { day } from "~/libs/day";
 import {
   CONTACT_ID,
@@ -22,7 +22,7 @@ import {
   WE_ARE_BACK_DESCRIPTION,
   WE_ARE_BACK_ID,
   WE_ARE_BACK_TITLE,
-  LABEL_READ_MORE,
+  // LABEL_READ_MORE,
   ERROR_FAILED_TO_LOAD,
   X_ACCOUNT_ID,
   X_ACCOUNT_URL,
@@ -39,18 +39,18 @@ const POST_LIMIT = 3;
 
 export function Page() {
   const context = usePageContext();
-  const [size, setSize] = useState(0);
+  // const [size, setSize] = useState(0);
   const [postList, setPostList] = useState<Post[]>([]);
-  const { data, isLoading, error } = useGetPostList(size, POST_LIMIT);
+  const { data, isLoading, error } = useGetPostList(0, POST_LIMIT);
 
   useEffect(() => {
     setPostList((prev) => [...prev, ...data]);
   }, [data]);
 
-  const handleClickReadMorePost = useThrottle(
-    () => setSize((prev) => prev + 1),
-    1000,
-  );
+  // const handleClickReadMorePost = useThrottle(
+  //   () => setSize((prev) => prev + 1),
+  //   1000,
+  // );
 
   useEffect(() => {
     return () => {
@@ -61,293 +61,337 @@ export function Page() {
   return (
     <>
       {/* eslint tailwindcss/enforces-negative-arbitrary-values: "off" */}
-      <section className="relative h-[100vh] max-h-800 overflow-hidden md:-mt-[calc(var(--height-header)_+_var(--spacing-header))]">
-        <img
-          alt="Meguro.es Icon"
-          src="/icon_squirrel.svg"
-          width={730}
-          height={800}
-          className="pointer-events-none absolute bottom-0 right-0 h-410 max-w-375 lg:bottom-auto lg:top-0 lg:h-800 lg:max-w-730"
-        />
-        <div className="relative h-full w-full pt-[15%] lg:flex lg:place-items-center lg:pt-0">
-          <div className="md:space-y-64">
-            <div className="space-y-18">
-              <h2 className="font-lobster text-64">{DEFAULT_TITLE}</h2>
-              <div className="text-18 font-bold">{DEFAULT_DESCRIPTION}</div>
-            </div>
-            {context?.data?.recentMeetup &&
-              day(context.data.recentMeetup.fields.date).isSameOrAfter(
-                day(),
-                "milliseconds",
-              ) && (
-                <div className="bg-gradient-primary relative hidden w-320 space-y-12 rounded-12 px-16 py-20 font-bold before:absolute before:inset-0 before:m-2 before:rounded-12 before:bg-navy child:relative md:block">
-                  <SectionHeaderCaption text={RECENT_MEETUP_ID} as="div" />
-                  <h3 className="text-12">
+      <section className="h-[calc(100vh-120px)] overflow-x-hidden px-20 md:px-80">
+        {/* 背景のリス部分 */}
+        <div className="absolute left-1/2 top-0 mx-auto h-full w-full max-w-[1280px] -translate-x-1/2 overflow-x-hidden overflow-y-visible xl:overflow-x-visible">
+          <img
+            alt=""
+            src="/icon_squirrel.svg"
+            width={730}
+            height={800}
+            className="pointer-events-none absolute -right-8 bottom-0 sm:-right-16 sm:bottom-auto sm:top-[calc(50%-16px)] sm:w-3/4 sm:-translate-y-1/2 md:w-fit"
+          />
+        </div>
+        <div className="relative flex h-full flex-col pt-120 sm:pt-183">
+          <h2 className="mb-24 w-fit font-lobster text-64 leading-100 md:mb-24">
+            {DEFAULT_TITLE}
+          </h2>
+          <p
+            className="mb-64 text-12 font-bold leading-140 tracking-2 md:text-16"
+            dangerouslySetInnerHTML={{ __html: DEFAULT_DESCRIPTION }}
+          />
+          {context?.data?.recentMeetup &&
+            day(context.data.recentMeetup.fields.date).isSameOrAfter(
+              day(),
+              "milliseconds",
+            ) && (
+              <div
+                className={clsx(
+                  "relative z-10 mb-20 mt-auto w-full rounded-12 border border-gradient-start bg-navy-alpha80 px-18 pb-16 pt-20 backdrop-blur-[24px] sm:mt-0 sm:max-w-320",
+                )}
+              >
+                <div className="relative z-10">
+                  <SectionHeaderCaption
+                    text={RECENT_MEETUP_ID}
+                    as="div"
+                    sizes="small"
+                    className="mb-12"
+                  />
+                  <h3 className="mb-12 text-12 leading-140 tracking-1">
                     {context.data.recentMeetup.fields.title}
                   </h3>
-                  <div className="space-y-6">
-                    <div className="flex place-items-center gap-x-6 text-10">
-                      <img
-                        alt="event icon"
-                        src="/icon_event.svg"
-                        width={16}
-                        height={16}
-                      />
-                      <span>
-                        {day(context.data.recentMeetup.fields.date).format(
-                          "YYYY.MM.DD (dd)",
-                        )}
-                      </span>
-                    </div>
-                    <div className="flex place-items-center">
-                      <div className="grow">
-                        <a
-                          href={context.data.recentMeetup.fields.locationUrl}
-                          className="flex w-fit place-items-center gap-x-6 text-10"
-                        >
-                          <img
-                            alt="location ghost icon"
-                            src="icon_location_ghost.svg"
-                            width={16}
-                            height={16}
-                          />
-                          <span>
-                            {context.data.recentMeetup.fields.locationName}
-                          </span>
-                        </a>
-                      </div>
-                      <div className="flex place-items-center gap-x-2">
-                        <a
-                          className="text-8 underline"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          href={context.data.recentMeetup.fields.connpassUrl}
-                        >
-                          {LABEL_OPEN_MEETUP}
-                        </a>
+                  <div className="flex items-end justify-between">
+                    <div>
+                      <p className="mb-4 flex items-center">
                         <img
-                          alt="open icon"
-                          src="/icon_open.svg"
-                          width={10}
-                          height={10}
+                          alt="開催日時"
+                          className="mr-6"
+                          src="/icon_event.svg"
+                          width={16}
+                          height={16}
                         />
+                        <span className="text-10 leading-140 tracking-2">
+                          {day(context.data.recentMeetup.fields.date).format(
+                            "YYYY.MM.DD (dd)",
+                          )}
+                        </span>
+                      </p>
+                      <div className="flex place-items-center">
+                        <div className="grow">
+                          <a
+                            href={context.data.recentMeetup.fields.locationUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex w-fit place-items-center gap-x-6 text-10"
+                          >
+                            <img
+                              alt=""
+                              src="icon_location_ghost.svg"
+                              width={16}
+                              height={16}
+                            />
+                            <span>
+                              {context.data.recentMeetup.fields.locationName}
+                            </span>
+                          </a>
+                        </div>
                       </div>
+                    </div>
+                    <div className="flex place-items-center gap-x-2">
+                      <a
+                        className="text-8 tracking-2 underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={context.data.recentMeetup.fields.connpassUrl}
+                      >
+                        {LABEL_OPEN_MEETUP}
+                      </a>
+                      <img
+                        alt="open icon"
+                        src="/icon_open.svg"
+                        width={10}
+                        height={10}
+                      />
                     </div>
                   </div>
                 </div>
-              )}
-          </div>
+              </div>
+            )}
         </div>
       </section>
-      <section className="grid grid-cols-1 gap-y-32 pb-40 pt-72 md:grid-cols-9 md:gap-y-0 md:py-120">
-        <h2
-          id={WE_ARE_BACK_ID.replace(/\s/g, "-").toLowerCase()}
-          className="md:col-span-4 md:mr-72"
-        >
-          <a
-            href={`/#${WE_ARE_BACK_ID.replace(/\s/g, "-").toLowerCase()}`}
-            className="space-y-8 font-bold"
-          >
-            <SectionHeaderCaption text={WE_ARE_BACK_ID} />
-            <span className="text-28">{WE_ARE_BACK_TITLE}</span>
-          </a>
-        </h2>
-        <div className="text-14 font-normal md:col-span-5 md:col-start-5 md:text-18 md:font-bold">
+      <section className="relative z-10 flex flex-col px-20 pb-40 pt-120 md:px-80 lg:flex-row lg:items-center lg:pb-120">
+        <SectionHeader
+          as="h2"
+          caption={WE_ARE_BACK_ID}
+          label={WE_ARE_BACK_TITLE}
+          sizes="large"
+          className="mb-32 shrink-0 lg:mb-0 lg:mr-72"
+        />
+        <p className="text-14 font-light leading-180 tracking-2 md:text-18 md:font-bold">
           {WE_ARE_BACK_DESCRIPTION}
-        </div>
+        </p>
       </section>
-      <section className="space-y-32 py-40 md:py-80">
-        <h2 id={MEETUP_LIST_ID.toLowerCase()}>
-          <a
-            href={`/#${MEETUP_LIST_ID.toLowerCase()}`}
-            className="space-y-8 font-bold"
-          >
-            <SectionHeaderCaption text={MEETUP_LIST_ID} />
-            <span className="text-28">{MEETUP_LIST}</span>
-          </a>
-        </h2>
-        <div>
-          <ul>
+      <section className="px-20 py-40 md:p-80">
+        <SectionHeader
+          as="h2"
+          caption={MEETUP_LIST_ID}
+          label={MEETUP_LIST}
+          sizes="large"
+          className="mb-32"
+        />
+        <table className="w-full table-auto">
+          <tbody>
             {context?.data?.meetupList?.map((meetup, index) => {
               const isComingSoon = day(meetup.fields.date).isSameOrAfter(
                 day(),
                 "milliseconds",
               );
               return (
-                <li
-                  key={meetup.fields.id || index}
-                  className="flex place-items-center gap-x-32 border-b border-white-alpha12 py-24 pl-4 pr-48"
+                <tr
+                  key={`${meetup.fields.id}-${index}`}
+                  className="border-b border-white-alpha12"
                 >
-                  <span
-                    className={clsx(
-                      "whitespace-nowrap rounded-12 px-10 py-8 text-14 font-bold md:px-16 md:py-12 md:text-18",
-                      {
-                        "bg-white-alpha12 text-white": !isComingSoon,
-                        "bg-gradient-primary relative before:absolute before:inset-0 before:m-2 before:rounded-12 before:bg-navy":
-                          isComingSoon,
-                      },
-                    )}
-                  >
-                    {isComingSoon ? (
-                      <span className="bg-gradient-primary relative bg-clip-text text-transparent">
-                        {LABEL_COMING_SOON}
-                      </span>
-                    ) : (
-                      LABEL_FINISHED
-                    )}
-                  </span>
-                  <span className="grid grid-cols-1 md:flex md:grow md:place-items-center md:gap-x-32">
-                    <span className="hidden text-18 md:inline">
-                      {day(meetup.fields.date).format("YYYY.MM.DD (dd)")}
-                    </span>
-                    <span className="text-18 md:grow">
-                      {meetup.fields.title}
-                    </span>
-                    <span className="mt-16 inline text-12 md:hidden">
-                      {day(meetup.fields.date).format("YYYY.MM.DD (dd)")}
-                    </span>
-                    <a
-                      href={meetup.fields.locationUrl}
-                      className="flex place-items-center gap-x-6 text-12 md:w-216 md:text-18"
+                  <td className="flex flex items-center px-0 py-24 lg:table-cell lg:pl-4 lg:pr-32">
+                    <p
+                      className={clsx(
+                        "h-fit whitespace-nowrap rounded-8 py-8 pl-12 pr-10 text-center text-14 font-bold leading-100 tracking-2 md:rounded-12 md:py-12 md:pl-16 md:pr-14 md:text-18",
+                        {
+                          "bg-white-alpha12 text-white": !isComingSoon,
+                          "bg-gradient-primary relative before:absolute before:inset-0 before:m-2 before:rounded-6 before:bg-navy md:before:rounded-10":
+                            isComingSoon,
+                        },
+                      )}
                     >
+                      {isComingSoon ? (
+                        <span className="bg-gradient-primary relative bg-clip-text text-transparent">
+                          {LABEL_COMING_SOON}
+                        </span>
+                      ) : (
+                        LABEL_FINISHED
+                      )}
+                    </p>
+                    {/* --- SPサイズの表示要素 --- */}
+                    <div className="ml-12 lg:hidden">
+                      <p className="mb-16 text-18 font-bold leading-140 tracking-2">
+                        {meetup.fields.title}
+                      </p>
+                      <p className="mb-4 flex items-center text-12 font-bold leading-140 tracking-2">
+                        <img
+                          alt=""
+                          className="mr-6"
+                          src="/icon_event.svg"
+                          width={20}
+                          height={20}
+                        />
+                        <time dateTime={meetup.fields.date}>
+                          {day(meetup.fields.date).format("YYYY.MM.DD（dd）")}
+                        </time>
+                      </p>
+                      <p className="flex items-center pr-32 text-12 font-bold leading-140 tracking-2">
+                        <img
+                          alt=""
+                          className="mr-6"
+                          src="/icon_location_ghost.svg"
+                          width={20}
+                          height={20}
+                        />
+                        <span>{meetup.fields.locationName}</span>
+                      </p>
+                    </div>
+                    {/* --- SPサイズの表示要素 --- */}
+                  </td>
+                  <td className="hidden whitespace-nowrap pr-32 text-18 font-bold leading-100 tracking-2 lg:table-cell">
+                    {day(meetup.fields.date).format("YYYY.MM.DD（dd）")}
+                  </td>
+                  <td className="hidden grow pr-32 text-18 font-bold leading-140 tracking-2 lg:table-cell">
+                    {meetup.fields.title}
+                  </td>
+                  <td className="hidden lg:table-cell">
+                    <div className="flex h-full items-center pr-32 text-16 font-bold leading-140 tracking-2">
                       <img
-                        alt="location icon"
+                        alt=""
+                        className="mr-6"
                         src="/icon_location_ghost.svg"
                         width={28}
                         height={28}
                       />
-                      <span>{meetup.fields.locationName}</span>
-                    </a>
-                  </span>
-                </li>
+                      <p>{meetup.fields.locationName}</p>
+                    </div>
+                  </td>
+                </tr>
               );
             })}
-          </ul>
-        </div>
+          </tbody>
+        </table>
       </section>
-      <section className="space-y-32 py-40 md:py-80">
-        <h2 id={INFORMATION_LIST_ID.toLowerCase()}>
-          <a
-            href={`/#${INFORMATION_LIST_ID.toLowerCase()}`}
-            className="space-y-8 font-bold"
-          >
-            <SectionHeaderCaption text={INFORMATION_LIST_ID} />
-            <span className="text-28">{INFORMATION_LIST_TITLE}</span>
-          </a>
-        </h2>
-        <div className="space-y-56">
-          <ul className="grid grid-cols-1 gap-y-48 md:grid-cols-3 md:gap-32">
+      <section className="px-20 py-40 md:p-80">
+        <SectionHeader
+          as="h2"
+          caption={INFORMATION_LIST_ID}
+          label={INFORMATION_LIST_TITLE}
+          sizes="large"
+          className="mb-32"
+        />
+        <div>
+          <ul className="grid grid-cols-1 gap-y-48 md:grid-cols-2 md:gap-32 lg:grid-cols-3">
             {!isLoading
-              ? postList.map((post) => (
-                  <li
-                    key={post.fields.slug}
-                    className="mx-auto w-full max-w-405 md:min-h-388"
-                  >
-                    <a
-                      href={`/posts/${post.fields.slug}`}
-                      className="space-y-24"
-                    >
+              ? postList.slice(0, POST_LIMIT).map((post) => (
+                  <li key={post.fields.slug}>
+                    <a href={`/posts/${post.fields.slug}`}>
                       <img
-                        className="h-200 w-full rounded-12 object-cover object-center md:h-240"
-                        alt={`${post.fields.title} Thumbnail`}
+                        className="mb-18 w-full rounded-12 border border-gray object-cover md:mb-24 md:max-h-200 md:w-auto"
+                        alt=""
                         src={
                           post.fields.heroImageUrl ||
                           "/image_information_hero_fallback.png"
                         }
+                        width={405}
+                        height={200}
                       />
-                      <h3 className="min-h-[calc(2em_*_2)] text-20 font-bold md:text-24">
+                      <h3 className="mb-18 line-clamp-2 text-20 font-bold leading-140 tracking-1 lg:mb-24 lg:text-24">
                         {post.fields.title}
                       </h3>
-                      <div className="space-y-10">
-                        <div className="flex gap-x-6">
-                          <img src="/icon_event.svg" width={28} height={28} />
-                          <time dateTime={post.fields.createdAt}>
-                            {day(post.fields.createdAt).format(
-                              "YYYY.MM.DD (dd)",
-                            )}
-                          </time>
-                        </div>
-                        <div className="line-clamp-2">
+                      <p className="flex items-center">
+                        <img
+                          src="/icon_event.svg"
+                          width={28}
+                          height={28}
+                          className="mr-6 h-20 w-20 lg:h-28 lg:w-28"
+                        />
+                        <time
+                          dateTime={post.fields.createdAt}
+                          className="text-12 font-bold leading-100 tracking-2 lg:text-16"
+                        >
+                          {day(post.fields.createdAt).format("YYYY.MM.DD (dd)")}
+                        </time>
+                      </p>
+                      {/* <div className="line-clamp-2">
                           {post.fields.description}
-                        </div>
-                      </div>
+                        </div> */}
                     </a>
                   </li>
                 ))
-              : [...new Array(POST_LIMIT * (size + 1))].map((_, index) => (
+              : Array.from({ length: POST_LIMIT }).map((_, index) => (
                   <li key={index}>
                     <Skeleton className="min-h-388" />
                   </li>
                 ))}
           </ul>
           {error && <div>{ERROR_FAILED_TO_LOAD}</div>}
-          {!(data.length < POST_LIMIT) && (
+          {/* {!(data.length < POST_LIMIT) && (
             <button
               onClick={handleClickReadMorePost}
               className="mx-auto block w-full rounded-full border-2 border-white py-14 text-18 font-bold md:w-360 md:py-18"
             >
               {LABEL_READ_MORE}
             </button>
-          )}
+          )} */}
         </div>
       </section>
-      <section className="grid grid-cols-1 gap-y-80 md:grid-cols-9 md:gap-y-0">
-        <div className="order-last space-y-40 md:order-none md:col-span-4 md:mr-72">
-          <h2 id={CONTACT_ID.toLowerCase()}>
-            <a
-              href={`/#${CONTACT_ID.toLowerCase()}`}
-              className="space-y-8 font-bold"
-            >
-              <SectionHeaderCaption text={CONTACT_ID} />
-              <span className="text-28">{CONTACT_TITLE}</span>
-            </a>
-          </h2>
-          <div className="space-y-16">
-            <a className="flex place-items-center gap-x-4" href={X_ACCOUNT_URL}>
-              <img alt="x icon" src="/icon_x.svg" width={24} height={24} />
-              <span className="pb-4 text-16 font-bold">{X_ACCOUNT_ID}</span>
-            </a>
-            <a
-              className="flex place-items-center gap-x-4"
-              href={CONNPASS_ACCOUNT_URL}
-            >
-              <img
-                alt="x icon"
-                src="/icon_connpass.svg"
-                width={24}
-                height={24}
-              />
-              <span className="pb-4 text-16 font-bold">
-                {CONNPASS_ACCOUNT_ID}
-              </span>
-            </a>
-          </div>
-        </div>
-        <div className="space-y-32 text-14 md:col-span-5 md:col-start-5 md:text-18">
-          <h2 id={GUIDELINE_INTRO_ID.toLowerCase()}>
-            <a
-              href={`/#${GUIDELINE_INTRO_ID.toLowerCase()}`}
-              className="space-y-8 font-bold"
-            >
-              <SectionHeaderCaption text={GUIDELINE_INTRO_ID} />
-              <span className="text-28">{GUIDELINE_INTRO_TITLE}</span>
-            </a>
-          </h2>
-          <div className="space-y-40">
-            <div>
-              {GUIDELINE_INTRO_DESCRIPTION.map((desc) => (
-                <div key={desc}>{desc}</div>
-              ))}
-            </div>
-            <a
-              href="/guideline"
-              className="bg-gradient-primary-to-br block w-full rounded-full px-32 py-14 text-center text-16 font-bold text-white md:py-24 md:text-24"
-            >
-              {LABEL_OPEN_GUIDELINE}
-            </a>
-          </div>
-        </div>
-      </section>
+      <div className="flex flex-col-reverse lg:flex-row">
+        <section className="shrink-0 p-0 px-20 py-40 md:py-80 md:pl-80 md:pr-40">
+          <SectionHeader
+            as="h2"
+            caption={CONTACT_ID}
+            label={CONTACT_TITLE}
+            sizes="large"
+            className="mb-32 md:mb-48 md:min-w-360"
+          />
+          <a
+            className="mb-16 flex items-center"
+            href={X_ACCOUNT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              alt="x icon"
+              className="mr-6"
+              src="/icon_x.svg"
+              width={24}
+              height={24}
+            />
+            <span className="pb-4 text-16 font-bold leading-100 tracking-2">
+              {X_ACCOUNT_ID}
+            </span>
+          </a>
+          <a
+            className="flex items-center"
+            href={CONNPASS_ACCOUNT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              alt="x icon"
+              className="mr-6"
+              src="/icon_connpass.svg"
+              width={24}
+              height={24}
+            />
+            <span className="pb-4 text-16 font-bold leading-100 tracking-2">
+              {CONNPASS_ACCOUNT_ID}
+            </span>
+          </a>
+        </section>
+        <section className="grow p-0 px-20 py-40 md:p-80 lg:pl-40">
+          <SectionHeader
+            as="h2"
+            caption={GUIDELINE_INTRO_ID}
+            label={GUIDELINE_INTRO_TITLE}
+            sizes="large"
+            className="mb-32"
+          />
+          <p
+            className="mb-40 text-14 font-light leading-180 tracking-2 md:text-18"
+            dangerouslySetInnerHTML={{ __html: GUIDELINE_INTRO_DESCRIPTION }}
+          />
+          <a
+            href="/guideline"
+            className="bg-gradient-primary-to-br block w-full rounded-full px-32 py-14 text-center text-16 font-bold leading-100 tracking-2 text-white md:py-18 md:text-18"
+          >
+            {LABEL_OPEN_GUIDELINE}
+          </a>
+        </section>
+      </div>
     </>
   );
 }

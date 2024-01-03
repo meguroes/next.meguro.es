@@ -5,10 +5,12 @@ export const SectionHeaderCaption = <T extends h.JSX.ElementType = "span">({
   text,
   as,
   sizes = "large",
+  className,
 }: {
   text: string;
   as?: T;
   sizes?: "large" | "small";
+  className?: string;
 } & Omit<h.ComponentProps<T>, "as">) => {
   const Element = as || "span";
   return (
@@ -19,6 +21,7 @@ export const SectionHeaderCaption = <T extends h.JSX.ElementType = "span">({
           "text-14": sizes === "large",
           "text-10": sizes === "small",
         },
+        className,
       )}
     >
       {text}

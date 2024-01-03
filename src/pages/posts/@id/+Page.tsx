@@ -6,7 +6,7 @@ export default function Page() {
   const context = usePageContext();
   const wantedSponsor = context?.data?.wantedSponsor;
   return (
-    <div className="space-y-120">
+    <div className="space-y-120 px-20 md:p-80">
       <section className="space-y-48">
         <Breadcrumb
           items={[
