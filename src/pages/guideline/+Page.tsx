@@ -1,7 +1,7 @@
 import { useMemo } from "preact/hooks";
 import { Breadcrumb } from "~/components/Breadcrumb";
 import { ContactX } from "~/components/Contact";
-import { SectionHeaderCaption } from "~/components/SectionHeaderCaption";
+import { SectionHeader } from "~/components/SectionHeader";
 import { usePageContext } from "~/hooks/usePageContext";
 
 type Section = {
@@ -70,7 +70,7 @@ export default function Page() {
   );
 
   return (
-    <div className="guideline space-y-64 px-20 md:space-y-120 md:p-80">
+    <main className="guideline space-y-64 px-20 md:space-y-120 md:p-80">
       <section className="space-y-48">
         <Breadcrumb
           items={[
@@ -80,60 +80,71 @@ export default function Page() {
             },
           ]}
         />
-        <h2 className="text-32 font-bold">{guideline?.fields.title}</h2>
-        <div>
-          <div
-            dangerouslySetInnerHTML={{
-              __html: guideline?.fields.summary || "",
-            }}
-          />
-        </div>
+        <h1 className="text-32 font-bold leading-140 tracking-2">
+          {guideline?.fields.title}
+        </h1>
+        <div
+          className="text-14 font-light leading-180 tracking-2"
+          dangerouslySetInnerHTML={{ __html: guideline?.fields.summary || "" }}
+        />
       </section>
       <section className="space-y-64">
         {slogans.map((slogan) => (
-          <div key={slogan.id} className="space-y-16">
-            <div className="space-y-12 font-bold">
-              <SectionHeaderCaption text={slogan.id} />
-              <h2 className="text-20">{slogan.title}</h2>
-            </div>
-            <div dangerouslySetInnerHTML={{ __html: slogan.desc }} />
+          <div key={slogan.id}>
+            <SectionHeader
+              as="h3"
+              className="mb-16"
+              caption={slogan.id}
+              label={slogan.title}
+              sizes="small"
+            />
+            <p
+              className="text-14 font-light leading-180 tracking-2"
+              dangerouslySetInnerHTML={{ __html: slogan.desc }}
+            />
           </div>
         ))}
       </section>
       <section className="space-y-48">
-        <h2 className="text-32 font-bold">
+        <h2 className="text-32 font-bold leading-140 tracking-2">
           {guideline?.fields.againstViolationsTitle}
         </h2>
         <div className="space-y-48">
           {againstViolations.map((againstViolation) => (
             <div key={againstViolation.id} className="space-y-16">
-              <div className="space-y-12 font-bold">
-                <SectionHeaderCaption text={againstViolation.id} />
-                <h3 className="text-20">{againstViolation.title}</h3>
-              </div>
-              <div className="text-14">
-                <div
-                  dangerouslySetInnerHTML={{ __html: againstViolation.desc }}
-                />
-              </div>
+              <SectionHeader
+                as="h3"
+                className="mb-16"
+                caption={againstViolation.id}
+                label={againstViolation.title}
+                sizes="small"
+              />
+              <p
+                className="text-14 font-light leading-180 tracking-2"
+                dangerouslySetInnerHTML={{ __html: againstViolation.desc }}
+              />
             </div>
           ))}
         </div>
       </section>
       <section className="space-y-48">
-        <h2 className="text-32 font-bold">
+        <h2 className="text-32 font-bold leading-140 tracking-2">
           {guideline?.fields.supplementTitle}
         </h2>
-        <div className="grid grid-cols-1 gap-64 md:grid-cols-3 md:gap-y-48">
+        <div className="grid grid-cols-1 gap-64 md:grid-cols-2 lg:grid-cols-3">
           {supplements.map((supplement) => (
             <div key={supplement.id} className="space-y-16">
-              <div className="space-y-12 font-bold">
-                <SectionHeaderCaption text={supplement.id} />
-                <h3 className="text-20">{supplement.title}</h3>
-              </div>
-              <div className="text-14">
-                <div dangerouslySetInnerHTML={{ __html: supplement.desc }} />
-              </div>
+              <SectionHeader
+                as="h3"
+                className="mb-16"
+                caption={supplement.id}
+                label={supplement.title}
+                sizes="small"
+              />
+              <p
+                className="text-14 font-light leading-180 tracking-2"
+                dangerouslySetInnerHTML={{ __html: supplement.desc }}
+              />
             </div>
           ))}
         </div>
@@ -141,6 +152,6 @@ export default function Page() {
       <section>
         <ContactX />
       </section>
-    </div>
+    </main>
   );
 }
