@@ -191,7 +191,7 @@ export function Page() {
                   key={`${meetup.fields.id}-${index}`}
                   className="border-b border-white-alpha12"
                 >
-                  <td className="flex flex items-center px-0 py-24 lg:table-cell lg:pl-4 lg:pr-32">
+                  <td className="flex items-center px-0 py-24 lg:table-cell lg:pl-4 lg:pr-32">
                     <p
                       className={clsx(
                         "h-fit whitespace-nowrap rounded-8 py-8 pl-12 pr-10 text-center text-14 font-bold leading-100 tracking-2 md:rounded-12 md:py-12 md:pl-16 md:pr-14 md:text-18",
@@ -211,7 +211,7 @@ export function Page() {
                       )}
                     </p>
                     {/* --- SPサイズの表示要素 --- */}
-                    <div className="ml-12 lg:hidden">
+                    <div className="ml-12 md:ml-24 lg:hidden">
                       <p className="mb-16 text-18 font-bold leading-140 tracking-2">
                         {meetup.fields.title}
                       </p>

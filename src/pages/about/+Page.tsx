@@ -19,7 +19,7 @@ export function Page() {
             },
           ]}
         />
-        <h1 className="text-32 font-bold leading-100 tracking-2">
+        <h1 className="text-32 font-bold leading-140 tracking-2">
           {about?.fields.title}
         </h1>
         <div
