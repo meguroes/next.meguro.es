@@ -38,7 +38,7 @@ const onRenderHtml: OnRenderHtmlAsync = async (
         <link rel="icon" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP:wght@300;500;800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+JP:wght@300;600;800&display=swap" rel="stylesheet">
         <meta property="og:type" content="website" />
         <meta property="og:url" content="${WEBSITE_URL}" />
         <meta property="og:locale" content="ja_JP" />
