@@ -41,10 +41,10 @@ export const WantedSponsor = ({
     ],
   );
   return (
-    <section className="space-y-48">
+    <section>
       <h2 className="mb-24 text-64 font-black leading-[120%]">{title}</h2>
-      <div className="text-14 font-light leading-180 tracking-2">
-        <p dangerouslySetInnerHTML={{ __html: summary }} />
+      <div className="mb-80 text-14 font-light leading-180 tracking-2">
+        <div dangerouslySetInnerHTML={{ __html: summary }} />
       </div>
       <div className="space-y-32">
         <h3 className="text-20 font-bold leading-140 tracking-2">
