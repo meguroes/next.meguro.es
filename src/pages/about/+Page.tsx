@@ -10,7 +10,7 @@ export function Page() {
   const wantedSponsor = context?.data?.wantedSponsor;
 
   return (
-    <main class="about grid grid-cols-1 gap-120 px-20 md:p-80">
+    <div class="about grid grid-cols-1 gap-64 px-20 md:gap-120 md:p-80">
       <div class="grid grid-cols-1 gap-48">
         <Breadcrumb
           items={[
@@ -75,6 +75,6 @@ export function Page() {
       <section>
         <ContactX />
       </section>
-    </main>
+    </div>
   );
 }

@@ -179,19 +179,24 @@ export function Page() {
           sizes="large"
           className="mb-32"
         />
-        <table className="w-full table-auto">
-          <tbody>
-            {context?.data?.meetupList?.map((meetup, index) => {
-              const isComingSoon = day(meetup.fields.date).isSameOrAfter(
-                day(),
-                "milliseconds",
-              );
-              return (
-                <tr
-                  key={`${meetup.fields.id}-${index}`}
-                  className="border-b border-white-alpha12"
+        <ol className="w-full table-auto">
+          {context?.data?.meetupList?.map((meetup, index) => {
+            const isComingSoon = day(meetup.fields.date).isSameOrAfter(
+              day(),
+              "milliseconds",
+            );
+            return (
+              <li
+                key={`${meetup.fields.id}-${index}`}
+                className="border-b border-white-alpha12"
+              >
+                <a
+                  href={meetup.fields.connpassUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
                 >
-                  <td className="flex items-center px-0 py-24 lg:table-cell lg:pl-4 lg:pr-32">
+                  <div className="flex items-center px-0 py-24 lg:pl-4 lg:pr-32">
                     <p
                       className={clsx(
                         "h-fit w-fit whitespace-nowrap rounded-8 py-8 pl-12 pr-10 text-center text-14 font-bold leading-100 tracking-2 md:rounded-12 md:py-12 md:pl-16 md:pr-14 md:text-18",
@@ -239,14 +244,14 @@ export function Page() {
                       </p>
                     </div>
                     {/* --- SPサイズの表示要素 --- */}
-                  </td>
-                  <td className="hidden whitespace-nowrap pr-32 text-18 font-bold leading-100 tracking-2 lg:table-cell">
+                  </div>
+                  <div className="whitespace-nowrap pr-32 text-18 font-bold leading-100 tracking-2">
                     {day(meetup.fields.date).format("YYYY.MM.DD（dd）")}
-                  </td>
-                  <td className="hidden grow pr-32 text-18 font-bold leading-140 tracking-2 lg:table-cell">
+                  </div>
+                  <div className="grow pr-32 text-18 font-bold leading-140 tracking-2">
                     {meetup.fields.title}
-                  </td>
-                  <td className="hidden lg:table-cell">
+                  </div>
+                  <div className="max-w-320">
                     <div className="flex h-full items-center pr-32 text-16 font-bold leading-140 tracking-2">
                       <img
                         alt=""
@@ -257,12 +262,12 @@ export function Page() {
                       />
                       <p>{meetup.fields.locationName}</p>
                     </div>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                  </div>
+                </a>
+              </li>
+            );
+          })}
+        </ol>
       </section>
       <section className="px-20 py-40 md:p-80">
         <SectionHeader
