@@ -245,13 +245,13 @@ export function Page() {
                     </div>
                     {/* --- SPサイズの表示要素 --- */}
                   </div>
-                  <div className="whitespace-nowrap pr-32 text-18 font-bold leading-100 tracking-2">
+                  <div className="hidden whitespace-nowrap pr-32 text-18 font-bold leading-100 tracking-2 lg:block">
                     {day(meetup.fields.date).format("YYYY.MM.DD（dd）")}
                   </div>
-                  <div className="grow pr-32 text-18 font-bold leading-140 tracking-2">
+                  <div className="hidden grow pr-32 text-18 font-bold leading-140 tracking-2 lg:block">
                     {meetup.fields.title}
                   </div>
-                  <div className="max-w-320">
+                  <div className="hidden max-w-320 lg:block">
                     <div className="flex h-full items-center pr-32 text-16 font-bold leading-140 tracking-2">
                       <img
                         alt=""
