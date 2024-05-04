@@ -212,7 +212,7 @@ export function Page() {
                           {LABEL_COMING_SOON}
                         </span>
                       ) : (
-                        LABEL_FINISHED
+                        <span className="text-white">{LABEL_FINISHED}</span>
                       )}
                     </p>
                     {/* --- SPサイズの表示要素 --- */}
